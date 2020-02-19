@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExternalLink renders correctly 1`] = `
+<WithStyles(ForwardRef(Link))
+  href="/"
+  rel="noreferrer"
+  target="_blank"
+/>
+`;

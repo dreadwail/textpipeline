@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageRouter renders correctly 1`] = `
+<Switch>
+  <Route
+    exact={true}
+    linkPath="/"
+    path="/"
+  >
+    <Home />
+  </Route>
+  <Route
+    path="*"
+  >
+    <NotFound />
+  </Route>
+</Switch>
+`;

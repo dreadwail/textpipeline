@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFound renders correctly 1`] = `
+<Styled(MuiBox)
+  alignItems="center"
+  display="flex"
+  flexDirection="column"
+  justifyContent="space-evenly"
+>
+  <Styled(MuiBox)
+    alignItems="center"
+    display="flex"
+    my={5}
+  >
+    <Styled(MuiBox)
+      mx={1}
+    >
+      <NotInterestedIcon />
+    </Styled(MuiBox)>
+    <WithStyles(ForwardRef(Typography))
+      align="center"
+      component="h2"
+      noWrap={true}
+      variant="h4"
+    >
+      Not Found
+    </WithStyles(ForwardRef(Typography))>
+  </Styled(MuiBox)>
+  <WithStyles(ForwardRef(Typography))
+    component="p"
+  >
+    That page doesn't seem to exist. It may have been moved or removed.
+  </WithStyles(ForwardRef(Typography))>
+  <InternalLink
+    to="/"
+  >
+    Click here to return home
+  </InternalLink>
+</Styled(MuiBox)>
+`;

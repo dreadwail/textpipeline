@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InternalLink renders correctly 1`] = `
+<WithStyles(ForwardRef(Link))
+  component={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "render": [Function],
+    }
+  }
+  to="/"
+/>
+`;

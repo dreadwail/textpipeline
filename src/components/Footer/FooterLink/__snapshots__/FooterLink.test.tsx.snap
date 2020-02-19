@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FooterLink with a valid icon renders correctly 1`] = `
+<WithStyles(ForwardRef(ListItem))
+  color="textPrimary"
+  component={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "render": [Function],
+    }
+  }
+  href="https://example.com/foo"
+>
+  <WithStyles(ForwardRef(ListItemIcon))>
+    <TwitterIcon />
+  </WithStyles(ForwardRef(ListItemIcon))>
+  <WithStyles(ForwardRef(ListItemText))>
+    Testing
+  </WithStyles(ForwardRef(ListItemText))>
+</WithStyles(ForwardRef(ListItem))>
+`;
+
+exports[`FooterLink with an invalid icon renders correctly 1`] = `
+<WithStyles(ForwardRef(ListItem))
+  color="textPrimary"
+  component={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "render": [Function],
+    }
+  }
+  href="https://example.com/foo"
+>
+  <WithStyles(ForwardRef(ListItemText))>
+    Testing
+  </WithStyles(ForwardRef(ListItemText))>
+</WithStyles(ForwardRef(ListItem))>
+`;

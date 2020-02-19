@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  align="center"
+  component="h1"
+  noWrap={true}
+  variant="h4"
+>
+  <WithStyles(ForwardRef(Link))
+    href="/"
+    underline="none"
+  >
+    Test Site
+  </WithStyles(ForwardRef(Link))>
+</WithStyles(ForwardRef(Typography))>
+`;
