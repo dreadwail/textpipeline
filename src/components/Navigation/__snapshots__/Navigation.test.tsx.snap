@@ -47,7 +47,7 @@ exports[`Navigation when visited from a known path renders correctly 1`] = `
       siteName="Test Site"
     >
       <Styled(MuiBox)
-        p={1}
+        p={2}
       >
         <div
           className="MuiBox-root MuiBox-root-2"
@@ -59,8 +59,7 @@ exports[`Navigation when visited from a known path renders correctly 1`] = `
             <WithStyles(ForwardRef(Typography))
               align="center"
               color="secondary"
-              component="h1"
-              variant="h4"
+              variant="h1"
             >
               <ForwardRef(Typography)
                 align="center"
@@ -99,11 +98,10 @@ exports[`Navigation when visited from a known path renders correctly 1`] = `
                   }
                 }
                 color="secondary"
-                component="h1"
-                variant="h4"
+                variant="h1"
               >
                 <h1
-                  className="MuiTypography-root MuiTypography-h4 MuiTypography-colorSecondary MuiTypography-alignCenter"
+                  className="MuiTypography-root MuiTypography-h1 MuiTypography-colorSecondary MuiTypography-alignCenter"
                 >
                   <strong>
                     Test Site
@@ -1061,7 +1059,7 @@ exports[`Navigation when visited from an unknown path renders correctly 1`] = `
       siteName="Test Site"
     >
       <Styled(MuiBox)
-        p={1}
+        p={2}
       >
         <div
           className="MuiBox-root MuiBox-root-84"
@@ -1073,8 +1071,7 @@ exports[`Navigation when visited from an unknown path renders correctly 1`] = `
             <WithStyles(ForwardRef(Typography))
               align="center"
               color="secondary"
-              component="h1"
-              variant="h4"
+              variant="h1"
             >
               <ForwardRef(Typography)
                 align="center"
@@ -1113,11 +1110,10 @@ exports[`Navigation when visited from an unknown path renders correctly 1`] = `
                   }
                 }
                 color="secondary"
-                component="h1"
-                variant="h4"
+                variant="h1"
               >
                 <h1
-                  className="MuiTypography-root MuiTypography-h4 MuiTypography-colorSecondary MuiTypography-alignCenter"
+                  className="MuiTypography-root MuiTypography-h1 MuiTypography-colorSecondary MuiTypography-alignCenter"
                 >
                   <strong>
                     Test Site

@@ -15,7 +15,7 @@ export interface NavigationProps {
 
 const Navigation: React.FC<NavigationProps> = ({ siteName }) => (
   <>
-    <Box p={1}>
+    <Box p={2}>
       <Heading level={1} align="center">
         {siteName}
       </Heading>
