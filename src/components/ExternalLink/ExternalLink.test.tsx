@@ -7,7 +7,7 @@ describe('ExternalLink', () => {
   let rendered: ShallowWrapper;
 
   beforeEach(() => {
-    rendered = shallow(<ExternalLink href="/" />);
+    rendered = shallow(<ExternalLink href="https://google.com" />);
   });
 
   it('renders correctly', () => {

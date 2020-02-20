@@ -1,37 +1,16 @@
-import { mount } from 'enzyme';
+import { shallow, ShallowWrapper } from 'enzyme';
 import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
 
-import Navigation from './Navigation';
+import Navigation, { NavigationProps } from './Navigation';
 
 describe('Navigation', () => {
-  let rendered: ReturnType<typeof mount>;
+  let rendered: ShallowWrapper<NavigationProps>;
 
-  describe('when visited from a known path', () => {
-    beforeEach(() => {
-      rendered = mount(
-        <MemoryRouter initialEntries={[{ pathname: '/', key: 'test' }]}>
-          <Navigation siteName="Test Site" />
-        </MemoryRouter>
-      );
-    });
-
-    it('renders correctly', () => {
-      expect(rendered).toMatchSnapshot();
-    });
+  beforeEach(() => {
+    rendered = shallow(<Navigation width={240} />);
   });
 
-  describe('when visited from an unknown path', () => {
-    beforeEach(() => {
-      rendered = mount(
-        <MemoryRouter initialEntries={[{ pathname: '/fnarglefloof', key: 'test' }]}>
-          <Navigation siteName="Test Site" />
-        </MemoryRouter>
-      );
-    });
-
-    it('renders correctly', () => {
-      expect(rendered).toMatchSnapshot();
-    });
+  it('renders correctly', () => {
+    expect(rendered).toMatchSnapshot();
   });
 });

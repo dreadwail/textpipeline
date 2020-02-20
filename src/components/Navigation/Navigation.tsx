@@ -1,37 +1,42 @@
-import Box from '@material-ui/core/Box';
-import Divider from '@material-ui/core/Divider';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import EditIcon from '@material-ui/icons/Edit';
+import Drawer from '@material-ui/core/Drawer';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 import React from 'react';
 
-import Heading from '../Heading';
+import Footer from '../Footer';
+import Header from '../Header';
+import TransformList from '../TransformList';
+import NavigationSection from './NavigationSection';
 
 export interface NavigationProps {
-  readonly siteName: string;
+  readonly width: number;
 }
 
-const Navigation: React.FC<NavigationProps> = ({ siteName }) => (
-  <>
-    <Box p={2}>
-      <Heading level={1} align="center">
-        {siteName}
-      </Heading>
-    </Box>
-    <Divider />
-    <List>
-      {['CSV to XLS', 'XML to JSON', 'Typescript to Javascript', 'SCSS to CSS'].map(text => (
-        <ListItem button key={text}>
-          <ListItemIcon>
-            <EditIcon />
-          </ListItemIcon>
-          <ListItemText primary={text} />
-        </ListItem>
-      ))}
-    </List>
-  </>
+const useStyles = makeStyles(
+  createStyles<'drawer' | 'drawerPaper', NavigationProps>({
+    drawer: {
+      width: props => props.width,
+    },
+    drawerPaper: {
+      width: props => props.width,
+      position: 'static',
+      minHeight: '100vh',
+    },
+  })
 );
+
+const Navigation: React.FC<NavigationProps> = ({ width }) => {
+  const classes = useStyles({ width });
+  return (
+    <Drawer className={classes.drawer} classes={{ paper: classes.drawerPaper }} variant="permanent" anchor="left">
+      <Header />
+      <NavigationSection isPrimary={true}>
+        <TransformList />
+      </NavigationSection>
+      <NavigationSection>
+        <Footer />
+      </NavigationSection>
+    </Drawer>
+  );
+};
 
 export default Navigation;

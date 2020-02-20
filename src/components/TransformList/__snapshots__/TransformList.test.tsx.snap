@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransformList renders correctly 1`] = `
+<WithStyles(ForwardRef(List))>
+  <ListItemLink
+    href="/transform/csv-to-xls"
+    icon={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "compare": null,
+        "displayName": "EditIcon",
+        "muiName": "SvgIcon",
+        "type": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "render": [Function],
+        },
+      }
+    }
+    key="csv-to-xls"
+    text="CSV to XLS"
+  />
+  <ListItemLink
+    href="/transform/xls-to-csv"
+    icon={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "compare": null,
+        "displayName": "EditIcon",
+        "muiName": "SvgIcon",
+        "type": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "render": [Function],
+        },
+      }
+    }
+    key="xls-to-csv"
+    text="XLS to CSV"
+  />
+</WithStyles(ForwardRef(List))>
+`;

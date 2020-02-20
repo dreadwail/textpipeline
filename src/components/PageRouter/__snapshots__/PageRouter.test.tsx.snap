@@ -3,12 +3,29 @@
 exports[`PageRouter renders correctly 1`] = `
 <Switch>
   <Route
+    component={[Function]}
     exact={true}
-    linkPath="/"
+    key="home"
     path="/"
-  >
-    <Home />
-  </Route>
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    key="oss"
+    path="/oss"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    key="CSV to XLS"
+    path="/transform/csv-to-xls"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    key="XLS to CSV"
+    path="/transform/xls-to-csv"
+  />
   <Route
     path="*"
   >

@@ -14,5 +14,18 @@ describe('Heading', () => {
     it('renders correctly', () => {
       expect(rendered).toMatchSnapshot();
     });
+
+    describe.each([1, 2, 3, 4, 5, 6] as HeadingProps['semanticLevel'][])(
+      'with semantic level %d',
+      (semanticLevel: HeadingProps['semanticLevel']) => {
+        beforeEach(() => {
+          rendered = shallow(<Heading level={level} semanticLevel={semanticLevel} />);
+        });
+
+        it('renders correctly', () => {
+          expect(rendered).toMatchSnapshot();
+        });
+      }
+    );
   });
 });

@@ -1,0 +1,461 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Transform after the user has entered text in the input box when the transform will fail when the transform button is clicked after the transform fails renders correctly 1`] = `
+<Fragment>
+  <Styled(MuiBox)
+    alignItems="center"
+    display="flex"
+    flexWrap="nowrap"
+    justifyContent="space-between"
+  >
+    <Heading
+      level={2}
+    >
+      Foo to Bar
+    </Heading>
+    <ForwardRef
+      href="#"
+    >
+      about this transform
+    </ForwardRef>
+  </Styled(MuiBox)>
+  <Styled(MuiBox)
+    my={3}
+  >
+    <form
+      autoComplete="off"
+      noValidate={true}
+    >
+      <WithStyles(ForwardRef(TextField))
+        autoFocus={true}
+        color="primary"
+        disabled={false}
+        error={true}
+        fullWidth={true}
+        helperText="There was an error! boom"
+        id="input-box"
+        label="Text to transform"
+        multiline={true}
+        onChange={[Function]}
+        placeholder="Enter FOO here"
+        required={true}
+        rows={12}
+        value="stuff"
+        variant="outlined"
+      />
+      <Styled(MuiBox)
+        display="flex"
+        justifyContent="flex-end"
+        my={3}
+      >
+        <Styled(MuiBox)
+          mx={1}
+        >
+          <WithStyles(ForwardRef(Button))
+            color="primary"
+            disableElevation={true}
+            disabled={false}
+            endIcon={<UNDEFINED />}
+            id="transform-button"
+            onClick={[Function]}
+            size="large"
+            variant="contained"
+          >
+            Transform
+          </WithStyles(ForwardRef(Button))>
+        </Styled(MuiBox)>
+        <WithStyles(ForwardRef(Button))
+          disableElevation={true}
+          disabled={false}
+          id="clear-button"
+          onClick={[Function]}
+          size="large"
+          variant="outlined"
+        >
+          Clear
+        </WithStyles(ForwardRef(Button))>
+      </Styled(MuiBox)>
+      <WithStyles(ForwardRef(TextField))
+        InputProps={
+          Object {
+            "readOnly": true,
+          }
+        }
+        color="primary"
+        disabled={false}
+        fullWidth={true}
+        id="output-box"
+        label="Transformed text"
+        multiline={true}
+        placeholder="BAR will appear here"
+        rows={12}
+        value=""
+        variant="outlined"
+      />
+      <Styled(MuiBox)
+        display="flex"
+        justifyContent="flex-end"
+        my={3}
+      >
+        <WithStyles(ForwardRef(Button))
+          color="primary"
+          disableElevation={true}
+          disabled={true}
+          endIcon={<UNDEFINED />}
+          id="copy-button"
+          onClick={[Function]}
+          size="small"
+          variant="contained"
+        >
+          Copy
+        </WithStyles(ForwardRef(Button))>
+      </Styled(MuiBox)>
+    </form>
+  </Styled(MuiBox)>
+</Fragment>
+`;
+
+exports[`Transform after the user has entered text in the input box when the transform will fail when the transform button is clicked after the transform fails renders correctly 2`] = `
+<Fragment>
+  <Styled(MuiBox)
+    alignItems="center"
+    display="flex"
+    flexWrap="nowrap"
+    justifyContent="space-between"
+  >
+    <Heading
+      level={2}
+    >
+      Foo to Bar
+    </Heading>
+    <ForwardRef
+      href="#"
+    >
+      about this transform
+    </ForwardRef>
+  </Styled(MuiBox)>
+  <Styled(MuiBox)
+    my={3}
+  >
+    <form
+      autoComplete="off"
+      noValidate={true}
+    >
+      <WithStyles(ForwardRef(TextField))
+        autoFocus={true}
+        color="primary"
+        disabled={false}
+        error={true}
+        fullWidth={true}
+        helperText="There was an error! boom"
+        id="input-box"
+        label="Text to transform"
+        multiline={true}
+        onChange={[Function]}
+        placeholder="Enter FOO here"
+        required={true}
+        rows={12}
+        value="stuff"
+        variant="outlined"
+      />
+      <Styled(MuiBox)
+        display="flex"
+        justifyContent="flex-end"
+        my={3}
+      >
+        <Styled(MuiBox)
+          mx={1}
+        >
+          <WithStyles(ForwardRef(Button))
+            color="primary"
+            disableElevation={true}
+            disabled={false}
+            endIcon={<UNDEFINED />}
+            id="transform-button"
+            onClick={[Function]}
+            size="large"
+            variant="contained"
+          >
+            Transform
+          </WithStyles(ForwardRef(Button))>
+        </Styled(MuiBox)>
+        <WithStyles(ForwardRef(Button))
+          disableElevation={true}
+          disabled={false}
+          id="clear-button"
+          onClick={[Function]}
+          size="large"
+          variant="outlined"
+        >
+          Clear
+        </WithStyles(ForwardRef(Button))>
+      </Styled(MuiBox)>
+      <WithStyles(ForwardRef(TextField))
+        InputProps={
+          Object {
+            "readOnly": true,
+          }
+        }
+        color="primary"
+        disabled={false}
+        fullWidth={true}
+        id="output-box"
+        label="Transformed text"
+        multiline={true}
+        placeholder="BAR will appear here"
+        rows={12}
+        value=""
+        variant="outlined"
+      />
+      <Styled(MuiBox)
+        display="flex"
+        justifyContent="flex-end"
+        my={3}
+      >
+        <WithStyles(ForwardRef(Button))
+          color="primary"
+          disableElevation={true}
+          disabled={true}
+          endIcon={<UNDEFINED />}
+          id="copy-button"
+          onClick={[Function]}
+          size="small"
+          variant="contained"
+        >
+          Copy
+        </WithStyles(ForwardRef(Button))>
+      </Styled(MuiBox)>
+    </form>
+  </Styled(MuiBox)>
+</Fragment>
+`;
+
+exports[`Transform after the user has entered text in the input box when the transform will fail when the transform button is clicked after the transform fails renders correctly 3`] = `
+<Fragment>
+  <Styled(MuiBox)
+    alignItems="center"
+    display="flex"
+    flexWrap="nowrap"
+    justifyContent="space-between"
+  >
+    <Heading
+      level={2}
+    >
+      Foo to Bar
+    </Heading>
+    <ForwardRef
+      href="#"
+    >
+      about this transform
+    </ForwardRef>
+  </Styled(MuiBox)>
+  <Styled(MuiBox)
+    my={3}
+  >
+    <form
+      autoComplete="off"
+      noValidate={true}
+    >
+      <WithStyles(ForwardRef(TextField))
+        autoFocus={true}
+        color="primary"
+        disabled={false}
+        error={true}
+        fullWidth={true}
+        helperText="There was an error! Unable to transform text."
+        id="input-box"
+        label="Text to transform"
+        multiline={true}
+        onChange={[Function]}
+        placeholder="Enter FOO here"
+        required={true}
+        rows={12}
+        value="stuff"
+        variant="outlined"
+      />
+      <Styled(MuiBox)
+        display="flex"
+        justifyContent="flex-end"
+        my={3}
+      >
+        <Styled(MuiBox)
+          mx={1}
+        >
+          <WithStyles(ForwardRef(Button))
+            color="primary"
+            disableElevation={true}
+            disabled={false}
+            endIcon={<UNDEFINED />}
+            id="transform-button"
+            onClick={[Function]}
+            size="large"
+            variant="contained"
+          >
+            Transform
+          </WithStyles(ForwardRef(Button))>
+        </Styled(MuiBox)>
+        <WithStyles(ForwardRef(Button))
+          disableElevation={true}
+          disabled={false}
+          id="clear-button"
+          onClick={[Function]}
+          size="large"
+          variant="outlined"
+        >
+          Clear
+        </WithStyles(ForwardRef(Button))>
+      </Styled(MuiBox)>
+      <WithStyles(ForwardRef(TextField))
+        InputProps={
+          Object {
+            "readOnly": true,
+          }
+        }
+        color="primary"
+        disabled={false}
+        fullWidth={true}
+        id="output-box"
+        label="Transformed text"
+        multiline={true}
+        placeholder="BAR will appear here"
+        rows={12}
+        value=""
+        variant="outlined"
+      />
+      <Styled(MuiBox)
+        display="flex"
+        justifyContent="flex-end"
+        my={3}
+      >
+        <WithStyles(ForwardRef(Button))
+          color="primary"
+          disableElevation={true}
+          disabled={true}
+          endIcon={<UNDEFINED />}
+          id="copy-button"
+          onClick={[Function]}
+          size="small"
+          variant="contained"
+        >
+          Copy
+        </WithStyles(ForwardRef(Button))>
+      </Styled(MuiBox)>
+    </form>
+  </Styled(MuiBox)>
+</Fragment>
+`;
+
+exports[`Transform renders correctly 1`] = `
+<Fragment>
+  <Styled(MuiBox)
+    alignItems="center"
+    display="flex"
+    flexWrap="nowrap"
+    justifyContent="space-between"
+  >
+    <Heading
+      level={2}
+    >
+      Foo to Bar
+    </Heading>
+    <ForwardRef
+      href="#"
+    >
+      about this transform
+    </ForwardRef>
+  </Styled(MuiBox)>
+  <Styled(MuiBox)
+    my={3}
+  >
+    <form
+      autoComplete="off"
+      noValidate={true}
+    >
+      <WithStyles(ForwardRef(TextField))
+        autoFocus={true}
+        color="primary"
+        disabled={false}
+        error={false}
+        fullWidth={true}
+        helperText="Once you've finished click the button to transform"
+        id="input-box"
+        label="Text to transform"
+        multiline={true}
+        onChange={[Function]}
+        placeholder="Enter FOO here"
+        required={true}
+        rows={12}
+        value=""
+        variant="outlined"
+      />
+      <Styled(MuiBox)
+        display="flex"
+        justifyContent="flex-end"
+        my={3}
+      >
+        <Styled(MuiBox)
+          mx={1}
+        >
+          <WithStyles(ForwardRef(Button))
+            color="primary"
+            disableElevation={true}
+            disabled={true}
+            endIcon={<UNDEFINED />}
+            id="transform-button"
+            onClick={[Function]}
+            size="large"
+            variant="contained"
+          >
+            Transform
+          </WithStyles(ForwardRef(Button))>
+        </Styled(MuiBox)>
+        <WithStyles(ForwardRef(Button))
+          disableElevation={true}
+          disabled={true}
+          id="clear-button"
+          onClick={[Function]}
+          size="large"
+          variant="outlined"
+        >
+          Clear
+        </WithStyles(ForwardRef(Button))>
+      </Styled(MuiBox)>
+      <WithStyles(ForwardRef(TextField))
+        InputProps={
+          Object {
+            "readOnly": true,
+          }
+        }
+        color="primary"
+        disabled={false}
+        fullWidth={true}
+        id="output-box"
+        label="Transformed text"
+        multiline={true}
+        placeholder="BAR will appear here"
+        rows={12}
+        value=""
+        variant="outlined"
+      />
+      <Styled(MuiBox)
+        display="flex"
+        justifyContent="flex-end"
+        my={3}
+      >
+        <WithStyles(ForwardRef(Button))
+          color="primary"
+          disableElevation={true}
+          disabled={true}
+          endIcon={<UNDEFINED />}
+          id="copy-button"
+          onClick={[Function]}
+          size="small"
+          variant="contained"
+        >
+          Copy
+        </WithStyles(ForwardRef(Button))>
+      </Styled(MuiBox)>
+    </form>
+  </Styled(MuiBox)>
+</Fragment>
+`;

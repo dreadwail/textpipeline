@@ -3,4 +3,4 @@ import React from 'react';
 
 import InternalLink from './InternalLink';
 
-storiesOf('InternalLink', module).add('default', () => <InternalLink to="/">Test Link</InternalLink>);
+storiesOf('InternalLink', module).add('default', () => <InternalLink href="/">Test Link</InternalLink>);

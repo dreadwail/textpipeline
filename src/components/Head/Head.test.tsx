@@ -7,7 +7,7 @@ describe('Head', () => {
   let rendered: ShallowWrapper;
 
   beforeEach(() => {
-    rendered = shallow(<Head siteName="Test Site" description="Testing 123 Testing" />);
+    rendered = shallow(<Head />);
   });
 
   it('renders correctly', () => {

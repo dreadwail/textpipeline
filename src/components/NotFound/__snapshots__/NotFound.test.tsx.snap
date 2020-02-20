@@ -31,10 +31,10 @@ exports[`NotFound renders correctly 1`] = `
   >
     That page doesn't seem to exist. It may have been moved or removed.
   </WithStyles(ForwardRef(Typography))>
-  <InternalLink
-    to="/"
+  <ForwardRef
+    href="/"
   >
     Click here to return home
-  </InternalLink>
+  </ForwardRef>
 </Styled(MuiBox)>
 `;
