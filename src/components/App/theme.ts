@@ -4,17 +4,17 @@ import { createMuiTheme } from '@material-ui/core/styles';
 
 export const theme = createMuiTheme({
   palette: {
-    primary: red,
-    secondary: blue,
+    primary: blue,
+    secondary: red,
   },
   typography: {
     fontSize: 14,
     h1: {
-      fontSize: 30,
+      fontSize: 40,
       fontWeight: 500,
     },
     h2: {
-      fontSize: 26,
+      fontSize: 30,
       fontWeight: 500,
     },
     h3: {
@@ -32,6 +32,9 @@ export const theme = createMuiTheme({
     h6: {
       fontSize: 14,
       fontWeight: 500,
+    },
+    subtitle1: {
+      fontSize: 20,
     },
   },
 });

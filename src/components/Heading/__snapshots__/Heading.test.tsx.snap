@@ -2,7 +2,61 @@
 
 exports[`Heading at level 1 renders correctly 1`] = `
 <WithStyles(ForwardRef(Typography))
-  color="secondary"
+  component="h1"
+  variant="h1"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 1 with semantic level 1 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h1"
+  variant="h1"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 1 with semantic level 2 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h2"
+  variant="h1"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 1 with semantic level 3 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h3"
+  variant="h1"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 1 with semantic level 4 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h4"
+  variant="h1"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 1 with semantic level 5 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h5"
+  variant="h1"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 1 with semantic level 6 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h6"
   variant="h1"
 >
   <strong />
@@ -11,7 +65,61 @@ exports[`Heading at level 1 renders correctly 1`] = `
 
 exports[`Heading at level 2 renders correctly 1`] = `
 <WithStyles(ForwardRef(Typography))
-  color="secondary"
+  component="h2"
+  variant="h2"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 2 with semantic level 1 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h1"
+  variant="h2"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 2 with semantic level 2 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h2"
+  variant="h2"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 2 with semantic level 3 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h3"
+  variant="h2"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 2 with semantic level 4 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h4"
+  variant="h2"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 2 with semantic level 5 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h5"
+  variant="h2"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 2 with semantic level 6 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h6"
   variant="h2"
 >
   <strong />
@@ -20,7 +128,61 @@ exports[`Heading at level 2 renders correctly 1`] = `
 
 exports[`Heading at level 3 renders correctly 1`] = `
 <WithStyles(ForwardRef(Typography))
-  color="secondary"
+  component="h3"
+  variant="h3"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 3 with semantic level 1 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h1"
+  variant="h3"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 3 with semantic level 2 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h2"
+  variant="h3"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 3 with semantic level 3 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h3"
+  variant="h3"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 3 with semantic level 4 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h4"
+  variant="h3"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 3 with semantic level 5 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h5"
+  variant="h3"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 3 with semantic level 6 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h6"
   variant="h3"
 >
   <strong />
@@ -29,7 +191,61 @@ exports[`Heading at level 3 renders correctly 1`] = `
 
 exports[`Heading at level 4 renders correctly 1`] = `
 <WithStyles(ForwardRef(Typography))
-  color="secondary"
+  component="h4"
+  variant="h4"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 4 with semantic level 1 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h1"
+  variant="h4"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 4 with semantic level 2 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h2"
+  variant="h4"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 4 with semantic level 3 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h3"
+  variant="h4"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 4 with semantic level 4 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h4"
+  variant="h4"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 4 with semantic level 5 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h5"
+  variant="h4"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 4 with semantic level 6 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h6"
   variant="h4"
 >
   <strong />
@@ -38,7 +254,61 @@ exports[`Heading at level 4 renders correctly 1`] = `
 
 exports[`Heading at level 5 renders correctly 1`] = `
 <WithStyles(ForwardRef(Typography))
-  color="secondary"
+  component="h5"
+  variant="h5"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 5 with semantic level 1 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h1"
+  variant="h5"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 5 with semantic level 2 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h2"
+  variant="h5"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 5 with semantic level 3 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h3"
+  variant="h5"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 5 with semantic level 4 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h4"
+  variant="h5"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 5 with semantic level 5 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h5"
+  variant="h5"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 5 with semantic level 6 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h6"
   variant="h5"
 >
   <strong />
@@ -47,7 +317,61 @@ exports[`Heading at level 5 renders correctly 1`] = `
 
 exports[`Heading at level 6 renders correctly 1`] = `
 <WithStyles(ForwardRef(Typography))
-  color="secondary"
+  component="h6"
+  variant="h6"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 6 with semantic level 1 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h1"
+  variant="h6"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 6 with semantic level 2 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h2"
+  variant="h6"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 6 with semantic level 3 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h3"
+  variant="h6"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 6 with semantic level 4 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h4"
+  variant="h6"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 6 with semantic level 5 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h5"
+  variant="h6"
+>
+  <strong />
+</WithStyles(ForwardRef(Typography))>
+`;
+
+exports[`Heading at level 6 with semantic level 6 renders correctly 1`] = `
+<WithStyles(ForwardRef(Typography))
+  component="h6"
   variant="h6"
 >
   <strong />

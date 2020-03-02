@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`routes can render route: CSV to XLS 1`] = `
+<Transform
+  execute={[Function]}
+  inputType="CSV"
+  name="CSV to XLS"
+  ossHref="/oss/csv-to-xls"
+  outputType="XLS"
+/>
+`;
+
+exports[`routes can render route: XLS to CSV 1`] = `
+<Transform
+  execute={[Function]}
+  inputType="XLS"
+  name="XLS to CSV"
+  ossHref="/oss/xls-to-csv"
+  outputType="CSV"
+/>
+`;
+
+exports[`routes can render route: home 1`] = `
+<Styled(MuiBox)
+  alignItems="center"
+  display="flex"
+  flexDirection="column"
+  height="100%"
+  justifyContent="center"
+  width="100%"
+>
+  <Heading
+    level={1}
+    semanticLevel={2}
+  >
+    What text do you want to transform?
+  </Heading>
+  <WithStyles(ForwardRef(Typography))
+    variant="subtitle1"
+  >
+    Choose a text transform from the menu.
+  </WithStyles(ForwardRef(Typography))>
+  <RepeatIcon
+    className="makeStyles-icon-1"
+  />
+</Styled(MuiBox)>
+`;
+
+exports[`routes can render route: oss 1`] = `
+<Styled(MuiBox)
+  alignItems="center"
+  display="flex"
+  flexDirection="column"
+  justifyContent="space-evenly"
+>
+  <Styled(MuiBox)
+    alignItems="center"
+    display="flex"
+    my={5}
+  >
+    <Styled(MuiBox)
+      mx={1}
+    >
+      <NotInterestedIcon />
+    </Styled(MuiBox)>
+    <WithStyles(ForwardRef(Typography))
+      align="center"
+      component="h2"
+      noWrap={true}
+      variant="h4"
+    >
+      Not Found
+    </WithStyles(ForwardRef(Typography))>
+  </Styled(MuiBox)>
+  <WithStyles(ForwardRef(Typography))
+    component="p"
+  >
+    That page doesn't seem to exist. It may have been moved or removed.
+  </WithStyles(ForwardRef(Typography))>
+  <ForwardRef
+    href="/"
+  >
+    Click here to return home
+  </ForwardRef>
+</Styled(MuiBox)>
+`;
+
+exports[`routes has the correct routes 1`] = `
+Object {
+  "CSV to XLS": Object {
+    "component": [Function],
+    "exact": true,
+    "path": "/transform/csv-to-xls",
+  },
+  "XLS to CSV": Object {
+    "component": [Function],
+    "exact": true,
+    "path": "/transform/xls-to-csv",
+  },
+  "home": Object {
+    "component": [Function],
+    "exact": true,
+    "path": "/",
+  },
+  "oss": Object {
+    "component": [Function],
+    "exact": true,
+    "path": "/oss",
+  },
+}
+`;

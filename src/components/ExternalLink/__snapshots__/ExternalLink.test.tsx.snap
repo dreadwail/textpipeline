@@ -2,7 +2,7 @@
 
 exports[`ExternalLink renders correctly 1`] = `
 <WithStyles(ForwardRef(Link))
-  href="/"
+  href="https://google.com"
   rel="noreferrer"
   target="_blank"
 />

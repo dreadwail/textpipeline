@@ -3,4 +3,4 @@ import React from 'react';
 
 import Navigation from './Navigation';
 
-storiesOf('Navigation', module).add('default', () => <Navigation siteName="Test Site" />);
+storiesOf('Navigation', module).add('default', () => <Navigation width={240} />);

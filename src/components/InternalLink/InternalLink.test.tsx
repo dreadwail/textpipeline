@@ -7,7 +7,7 @@ describe('InternalLink', () => {
   let rendered: ShallowWrapper;
 
   beforeEach(() => {
-    rendered = shallow(<InternalLink to="/" />);
+    rendered = shallow(<InternalLink href="/" />);
   });
 
   it('renders correctly', () => {

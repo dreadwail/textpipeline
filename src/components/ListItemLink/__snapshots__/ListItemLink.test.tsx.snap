@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListItemLink with an icon specified renders correctly 1`] = `
+<WithStyles(ForwardRef(ListItem))
+  button={true}
+  color="textPrimary"
+  component={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "render": [Function],
+    }
+  }
+  href="https://example.com/foo"
+>
+  <WithStyles(ForwardRef(ListItemIcon))>
+    <TwitterIcon />
+  </WithStyles(ForwardRef(ListItemIcon))>
+  <WithStyles(ForwardRef(ListItemText))
+    inset={false}
+  >
+    Testing
+  </WithStyles(ForwardRef(ListItemText))>
+</WithStyles(ForwardRef(ListItem))>
+`;
+
+exports[`ListItemLink with isExternal specified true renders correctly 1`] = `
+<WithStyles(ForwardRef(ListItem))
+  button={true}
+  color="textPrimary"
+  component={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "render": [Function],
+    }
+  }
+  href="https://example.com/foo"
+>
+  <WithStyles(ForwardRef(ListItemIcon))>
+    <ArrowRightIcon />
+  </WithStyles(ForwardRef(ListItemIcon))>
+  <WithStyles(ForwardRef(ListItemText))
+    inset={false}
+  >
+    Testing
+  </WithStyles(ForwardRef(ListItemText))>
+</WithStyles(ForwardRef(ListItem))>
+`;
+
+exports[`ListItemLink with no icon specified renders correctly 1`] = `
+<WithStyles(ForwardRef(ListItem))
+  button={true}
+  color="textPrimary"
+  component={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "render": [Function],
+    }
+  }
+  href="https://example.com/foo"
+>
+  <WithStyles(ForwardRef(ListItemIcon))>
+    <ArrowRightIcon />
+  </WithStyles(ForwardRef(ListItemIcon))>
+  <WithStyles(ForwardRef(ListItemText))
+    inset={false}
+  >
+    Testing
+  </WithStyles(ForwardRef(ListItemText))>
+</WithStyles(ForwardRef(ListItem))>
+`;

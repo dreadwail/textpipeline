@@ -1,12 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-export interface HeadProps {
-  readonly description: string;
-  readonly siteName: string;
-}
+const siteName = 'Text Pipeline';
+const description = '';
 
-const Head: React.FC<HeadProps> = ({ description, siteName }) => (
+const Head: React.FC = () => (
   <Helmet>
     <title>{siteName}</title>
     <meta charSet="utf-8" />

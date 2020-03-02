@@ -1,51 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Page renders correctly 1`] = `
-<div
-  className="makeStyles-root-1"
->
-  <Head
-    description="Testing 123 Testing"
-    siteName="Test Site"
-  />
-  <WithStyles(ForwardRef(Drawer))
-    anchor="left"
-    className="makeStyles-drawer-2"
-    classes={
-      Object {
-        "paper": "makeStyles-drawerPaper-3",
-      }
-    }
-    variant="permanent"
+<Fragment>
+  <Head />
+  <Styled(MuiBox)
+    display="flex"
   >
     <Navigation
-      siteName="Test Site"
+      width={240}
     />
-  </WithStyles(ForwardRef(Drawer))>
-  <Content
-    className="makeStyles-content-4"
-  >
-    <PageRouter />
-  </Content>
-  <Footer
-    footer={
-      Object {
-        "Test Section 1": Array [
-          Object {
-            "href": "https://example.com/alpha-1",
-            "icon": "twitter",
-            "text": "Alpha 1",
-          },
-        ],
-        "Test Section 2": Array [
-          Object {
-            "href": "https://example.com/beta-1",
-            "icon": "twitter",
-            "text": "Beta 1",
-          },
-        ],
-      }
-    }
-  />
-</div>
+    <Content>
+      <PageRouter />
+    </Content>
+  </Styled(MuiBox)>
+</Fragment>
 `;

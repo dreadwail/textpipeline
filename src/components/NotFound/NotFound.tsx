@@ -15,7 +15,7 @@ const NotFound: React.FC = () => (
       </Typography>
     </Box>
     <Typography component="p">That page doesn't seem to exist. It may have been moved or removed.</Typography>
-    <InternalLink to="/">Click here to return home</InternalLink>
+    <InternalLink href="/">Click here to return home</InternalLink>
   </Box>
 );
 

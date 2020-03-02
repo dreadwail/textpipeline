@@ -1,4 +1,4 @@
-import Link from '@material-ui/core/Link';
+import Link, { LinkProps } from '@material-ui/core/Link';
 import React from 'react';
 import { Link as ReactRouterLink, LinkProps as ReactRouterLinkProps } from 'react-router-dom';
 
@@ -9,13 +9,25 @@ const ReactRouterInternalLink = React.forwardRef<HTMLAnchorElement, ReactRouterL
 ));
 
 export interface InternalLinkProps {
-  readonly to: string;
+  readonly href: string;
+  readonly className?: string;
+  readonly color?: LinkProps['color'];
+  readonly underline?: LinkProps['underline'];
 }
 
-const InternalLink: React.FC<InternalLinkProps> = ({ to, children }) => (
-  <Link component={ReactRouterInternalLink} to={to}>
-    {children}
-  </Link>
+const InternalLink: React.FC<InternalLinkProps> = React.forwardRef<any, InternalLinkProps>(
+  ({ href, children, className, color, underline }, ref) => (
+    <Link
+      component={ReactRouterInternalLink}
+      to={href}
+      className={className}
+      ref={ref}
+      color={color}
+      underline={underline}
+    >
+      {children}
+    </Link>
+  )
 );
 
 export default InternalLink;

@@ -3,4 +3,6 @@ import React from 'react';
 
 import ExternalLink from './ExternalLink';
 
-storiesOf('ExternalLink', module).add('default', () => <ExternalLink href="/">Test Link</ExternalLink>);
+storiesOf('ExternalLink', module).add('default', () => (
+  <ExternalLink href="https://google.com">Test Link</ExternalLink>
+));

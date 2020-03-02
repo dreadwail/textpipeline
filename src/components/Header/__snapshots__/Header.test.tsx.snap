@@ -1,17 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header renders correctly 1`] = `
-<WithStyles(ForwardRef(Typography))
-  align="center"
-  component="h1"
-  noWrap={true}
-  variant="h4"
+<Styled(MuiBox)
+  p={2}
 >
-  <WithStyles(ForwardRef(Link))
-    href="/"
-    underline="none"
+  <Heading
+    align="center"
+    level={2}
+    noWrap={true}
+    semanticLevel={1}
   >
-    Test Site
-  </WithStyles(ForwardRef(Link))>
-</WithStyles(ForwardRef(Typography))>
+    <ForwardRef
+      href="/"
+      underline="none"
+    >
+      <Styled(MuiBox)
+        color="primary.main"
+        component="span"
+        display="inline"
+      >
+        Text
+      </Styled(MuiBox)>
+      <Styled(MuiBox)
+        color="black"
+        component="span"
+        display="inline"
+      >
+        Pipeline
+      </Styled(MuiBox)>
+    </ForwardRef>
+  </Heading>
+</Styled(MuiBox)>
 `;

@@ -1,4 +1,3 @@
-import Home from 'components/Home';
 import NotFound from 'components/NotFound';
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
@@ -7,9 +6,9 @@ import routes from '../../routes';
 
 const PageRouter: React.FC = () => (
   <Switch>
-    <Route {...routes.home}>
-      <Home />
-    </Route>
+    {Object.keys(routes).map(routeName => (
+      <Route key={routeName} {...routes[routeName]} />
+    ))}
     <Route path="*">
       <NotFound />
     </Route>
