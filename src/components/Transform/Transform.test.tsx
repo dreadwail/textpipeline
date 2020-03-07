@@ -3,6 +3,8 @@ import copy from 'clipboard-copy';
 import { shallow, ShallowWrapper } from 'enzyme';
 import React from 'react';
 
+import { testTransform } from '../../fixtures';
+import routes from '../../routes';
 import Transform, { TransformProps } from './Transform';
 
 jest.mock('clipboard-copy');
@@ -33,8 +35,17 @@ describe('Transform', () => {
   let rendered: ShallowWrapper<TransformProps>;
 
   beforeEach(() => {
-    execute = jest.fn((input: string) => Promise.resolve(`${input} - transformed to a Bar!`));
-    rendered = shallow(<Transform name="Foo to Bar" ossHref="#" inputType="FOO" outputType="BAR" execute={execute} />);
+    execute = jest.fn(testTransform.execute);
+    rendered = shallow(
+      <Transform
+        name={testTransform.name}
+        ossHref={`${routes.oss.path}/${testTransform.slug}`}
+        inputType={testTransform.inputType}
+        outputType={testTransform.outputType}
+        defaultOutput={testTransform.defaultOutput}
+        execute={execute}
+      />
+    );
   });
 
   it('renders correctly', () => {
@@ -131,9 +142,9 @@ describe('Transform', () => {
         });
 
         describe.each([
-          { error: 'boom', expectedMessage: 'There was an error! boom' },
-          { error: new Error('boom'), expectedMessage: 'There was an error! boom' },
-          { error: 42, expectedMessage: 'There was an error! Unable to transform text.' },
+          { error: 'boom', expectedMessage: 'boom' },
+          { error: new Error('boom'), expectedMessage: 'boom' },
+          { error: 42, expectedMessage: 'Unable to transform text.' },
         ])('after the transform fails', ({ error, expectedMessage }) => {
           beforeEach(() => {
             deferred.reject(error);
@@ -149,6 +160,10 @@ describe('Transform', () => {
 
           it('sets the error state', () => {
             expect(getInputBox(rendered).prop('helperText')).toEqual(expectedMessage);
+          });
+
+          it('sets the output to the default output value from the transform', () => {
+            expect(getOutputBox(rendered).prop('value')).toEqual(testTransform.defaultOutput);
           });
 
           it('renders correctly', () => {

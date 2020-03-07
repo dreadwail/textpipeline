@@ -7,6 +7,14 @@ import ListItemLink from './ListItemLink';
 describe('ListItemLink', () => {
   let rendered: ShallowWrapper;
 
+  beforeEach(() => {
+    rendered = shallow(<ListItemLink text="Testing" href="https://example.com/foo" />);
+  });
+
+  it('renders correctly', () => {
+    expect(rendered).toMatchSnapshot();
+  });
+
   describe('with an icon specified', () => {
     beforeEach(() => {
       rendered = shallow(<ListItemLink icon={TwitterIcon} text="Testing" href="https://example.com/foo" />);
@@ -17,9 +25,9 @@ describe('ListItemLink', () => {
     });
   });
 
-  describe('with no icon specified', () => {
+  describe('with isExternal specified true', () => {
     beforeEach(() => {
-      rendered = shallow(<ListItemLink text="Testing" href="https://example.com/foo" />);
+      rendered = shallow(<ListItemLink text="Testing" href="https://example.com/foo" isExternal={true} />);
     });
 
     it('renders correctly', () => {
@@ -27,9 +35,9 @@ describe('ListItemLink', () => {
     });
   });
 
-  describe('with isExternal specified true', () => {
+  describe('with a subtitle specified', () => {
     beforeEach(() => {
-      rendered = shallow(<ListItemLink text="Testing" href="https://example.com/foo" isExternal={true} />);
+      rendered = shallow(<ListItemLink text="Testing" subtitle="Testing Subtitle" href="https://example.com/foo" />);
     });
 
     it('renders correctly', () => {

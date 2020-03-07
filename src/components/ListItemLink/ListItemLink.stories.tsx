@@ -12,5 +12,7 @@ storiesOf('ListItemLink', module).add('default', () => (
     <ListItemLink text="external link 1" href="https://google.com" isExternal={true} />
     <ListItemLink text="external link 2" href="https://bbc.com" isExternal={true} />
     <ListItemLink text="link with icon" href="#" icon={TwitterIcon} />
+    <ListItemLink text="with subtitle" subtitle="test subtitle" href="#" />
+    <ListItemLink text="with subtitle and icon" subtitle="test subtitle" icon={TwitterIcon} href="#" />
   </List>
 ));

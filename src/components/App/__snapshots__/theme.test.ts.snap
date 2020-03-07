@@ -290,7 +290,7 @@ Object {
     "round": [Function],
     "subtitle1": Object {
       "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-      "fontSize": 20,
+      "fontSize": 18,
       "fontWeight": 400,
       "letterSpacing": "0.00938em",
       "lineHeight": 1.75,

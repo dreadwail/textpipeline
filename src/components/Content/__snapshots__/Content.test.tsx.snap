@@ -6,6 +6,8 @@ exports[`Content renders correctly 1`] = `
 >
   <Styled(MuiBox)
     height="100%"
+    maxWidth={1200}
+    mx="auto"
     p={3}
     width="100%"
   >
