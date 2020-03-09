@@ -1,101 +1,79 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`routes can render route: CSV to XLS 1`] = `
-<Transform
+exports[`routes can render route: Binary To Decimal 1`] = `
+<Component
+  defaultOutput="0"
   execute={[Function]}
-  inputType="CSV"
-  name="CSV to XLS"
-  ossHref="/oss/csv-to-xls"
-  outputType="XLS"
+  inputType="Binary"
+  name="Binary To Decimal"
+  ossHref="/oss/decimal-js-light"
+  outputType="Decimal"
 />
 `;
 
-exports[`routes can render route: XLS to CSV 1`] = `
-<Transform
-  execute={[Function]}
-  inputType="XLS"
-  name="XLS to CSV"
-  ossHref="/oss/xls-to-csv"
-  outputType="CSV"
+exports[`routes can render route: decimal.js-light 1`] = `
+<Component
+  description="The light version of decimal.js, an arbitrary-precision Decimal type for JavaScript."
+  license={
+    Object {
+      "href": "https://choosealicense.com/licenses/mit",
+      "name": "MIT",
+      "slug": "mit",
+    }
+  }
+  licenseText="
+The MIT Expat Licence.
+
+Copyright (c) 2018 Michael Mclaughlin
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  "
+  name="decimal.js-light"
+  projectHref="http://mikemcl.github.io/decimal.js-light"
+  repositoryHref="https://github.com/MikeMcl/decimal.js-light/"
+  slug="decimal-js-light"
+  transformsPath="/transforms"
 />
 `;
 
-exports[`routes can render route: home 1`] = `
-<Styled(MuiBox)
-  alignItems="center"
-  display="flex"
-  flexDirection="column"
-  height="100%"
-  justifyContent="center"
-  width="100%"
->
-  <Heading
-    level={1}
-    semanticLevel={2}
-  >
-    What text do you want to transform?
-  </Heading>
-  <WithStyles(ForwardRef(Typography))
-    variant="subtitle1"
-  >
-    Choose a text transform from the menu.
-  </WithStyles(ForwardRef(Typography))>
-  <RepeatIcon
-    className="makeStyles-icon-1"
-  />
-</Styled(MuiBox)>
-`;
+exports[`routes can render route: home 1`] = `"test-home-component"`;
 
 exports[`routes can render route: oss 1`] = `
-<Styled(MuiBox)
-  alignItems="center"
-  display="flex"
-  flexDirection="column"
-  justifyContent="space-evenly"
->
-  <Styled(MuiBox)
-    alignItems="center"
-    display="flex"
-    my={5}
-  >
-    <Styled(MuiBox)
-      mx={1}
-    >
-      <NotInterestedIcon />
-    </Styled(MuiBox)>
-    <WithStyles(ForwardRef(Typography))
-      align="center"
-      component="h2"
-      noWrap={true}
-      variant="h4"
-    >
-      Not Found
-    </WithStyles(ForwardRef(Typography))>
-  </Styled(MuiBox)>
-  <WithStyles(ForwardRef(Typography))
-    component="p"
-  >
-    That page doesn't seem to exist. It may have been moved or removed.
-  </WithStyles(ForwardRef(Typography))>
-  <ForwardRef
-    href="/"
-  >
-    Click here to return home
-  </ForwardRef>
-</Styled(MuiBox)>
+<Component
+  ossPath="/oss"
+/>
 `;
+
+exports[`routes can render route: transforms 1`] = `"test-not-found-component"`;
 
 exports[`routes has the correct routes 1`] = `
 Object {
-  "CSV to XLS": Object {
+  "Binary To Decimal": Object {
     "component": [Function],
     "exact": true,
-    "path": "/transform/csv-to-xls",
+    "path": "/transforms/binary-to-decimal",
   },
-  "XLS to CSV": Object {
+  "decimal.js-light": Object {
     "component": [Function],
     "exact": true,
-    "path": "/transform/xls-to-csv",
+    "path": "/oss/decimal-js-light",
   },
   "home": Object {
     "component": [Function],
@@ -106,6 +84,11 @@ Object {
     "component": [Function],
     "exact": true,
     "path": "/oss",
+  },
+  "transforms": Object {
+    "component": [Function],
+    "exact": true,
+    "path": "/transforms",
   },
 }
 `;

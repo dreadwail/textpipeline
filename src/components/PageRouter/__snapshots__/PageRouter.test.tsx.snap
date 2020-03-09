@@ -17,14 +17,20 @@ exports[`PageRouter renders correctly 1`] = `
   <Route
     component={[Function]}
     exact={true}
-    key="CSV to XLS"
-    path="/transform/csv-to-xls"
+    key="transforms"
+    path="/transforms"
   />
   <Route
     component={[Function]}
     exact={true}
-    key="XLS to CSV"
-    path="/transform/xls-to-csv"
+    key="Binary To Decimal"
+    path="/transforms/binary-to-decimal"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    key="decimal.js-light"
+    path="/oss/decimal-js-light"
   />
   <Route
     path="*"

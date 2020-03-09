@@ -6,6 +6,7 @@
     "@material-ui/core": "4.9.1",
     "@material-ui/icons": "4.9.1",
     "clipboard-copy": "3.1.0",
+    "decimal.js": "^10.2.0",
     "moment": "2.24.0",
     "react": "16.10.2",
     "react-dom": "16.10.2",
@@ -41,41 +42,22 @@
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
-    "extends": [
-      "react-app",
-      "plugin:import/typescript",
-      "prettier"
-    ],
-    "plugins": [
-      "simple-import-sort",
-      "import"
-    ],
+    "extends": ["react-app", "plugin:import/typescript", "prettier"],
+    "plugins": ["simple-import-sort", "import"],
     "settings": {
       "import/resolver": {
         "typescript": {}
       }
     },
     "rules": {
-      "arrow-body-style": [
-        "error",
-        "as-needed"
-      ],
-      "array-bracket-spacing": [
-        "error",
-        "never"
-      ],
+      "arrow-body-style": ["error", "as-needed"],
+      "array-bracket-spacing": ["error", "never"],
       "arrow-spacing": "error",
       "brace-style": "error",
       "camelcase": "error",
-      "comma-dangle": [
-        "error",
-        "always-multiline"
-      ],
+      "comma-dangle": ["error", "always-multiline"],
       "curly": "error",
-      "eol-last": [
-        "error",
-        "always"
-      ],
+      "eol-last": ["error", "always"],
       "eqeqeq": "error",
       "import/first": "error",
       "import/newline-after-import": "error",
@@ -90,10 +72,7 @@
           "SwitchCase": 1
         }
       ],
-      "jsx-quotes": [
-        "error",
-        "prefer-double"
-      ],
+      "jsx-quotes": ["error", "prefer-double"],
       "key-spacing": [
         "error",
         {
@@ -101,10 +80,7 @@
           "afterColon": true
         }
       ],
-      "linebreak-style": [
-        "error",
-        "unix"
-      ],
+      "linebreak-style": ["error", "unix"],
       "max-len": [
         "error",
         {
@@ -112,10 +88,7 @@
           "comments": 120
         }
       ],
-      "max-params": [
-        "error",
-        4
-      ],
+      "max-params": ["error", 4],
       "no-alert": "error",
       "no-console": "error",
       "no-const-assign": "error",
@@ -135,7 +108,6 @@
       "no-useless-escape": "error",
       "no-useless-return": "error",
       "no-undef-init": "error",
-      "no-undefined": "error",
       "no-unused-vars": "error",
       "no-unneeded-ternary": "error",
       "no-use-before-define": "error",
@@ -152,33 +124,15 @@
           "avoidEscape": true
         }
       ],
-      "require-await": "error",
-      "semi": [
-        "error",
-        "always"
-      ],
+      "semi": ["error", "always"],
       "simple-import-sort/sort": "error",
-      "space-in-parens": [
-        "error",
-        "never"
-      ],
-      "spaced-comment": [
-        "error",
-        "always"
-      ]
+      "space-in-parens": ["error", "never"],
+      "spaced-comment": ["error", "always"]
     }
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
   },
   "jest": {
     "collectCoverageFrom": [
@@ -190,7 +144,7 @@
       "!**/*.d.ts",
       "!src/data/store.ts",
       "!src/config.ts",
-      "!src/testing/**/*.{js,jsx,ts,tsx}"
+      "!src/fixtures/**/*.{js,jsx,ts,tsx}"
     ],
     "coverageThreshold": {
       "global": {
@@ -200,14 +154,8 @@
         "statements": 95
       }
     },
-    "coverageReporters": [
-      "text",
-      "text-summary",
-      "html"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    "coverageReporters": ["text", "text-summary", "html"],
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   },
   "devDependencies": {
     "@babel/core": "7.6.4",

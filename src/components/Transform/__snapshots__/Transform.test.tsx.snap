@@ -14,7 +14,7 @@ exports[`Transform after the user has entered text in the input box when the tra
       Foo to Bar
     </Heading>
     <ForwardRef
-      href="#"
+      href="/oss/foo-to-bar"
     >
       about this transform
     </ForwardRef>
@@ -32,12 +32,12 @@ exports[`Transform after the user has entered text in the input box when the tra
         disabled={false}
         error={true}
         fullWidth={true}
-        helperText="There was an error! boom"
+        helperText="boom"
         id="input-box"
         label="Text to transform"
         multiline={true}
         onChange={[Function]}
-        placeholder="Enter FOO here"
+        placeholder="Enter Foo here"
         required={true}
         rows={12}
         value="stuff"
@@ -87,9 +87,9 @@ exports[`Transform after the user has entered text in the input box when the tra
         id="output-box"
         label="Transformed text"
         multiline={true}
-        placeholder="BAR will appear here"
+        placeholder="Bar will appear here"
         rows={12}
-        value=""
+        value="0"
         variant="outlined"
       />
       <Styled(MuiBox)
@@ -100,7 +100,7 @@ exports[`Transform after the user has entered text in the input box when the tra
         <WithStyles(ForwardRef(Button))
           color="primary"
           disableElevation={true}
-          disabled={true}
+          disabled={false}
           endIcon={<UNDEFINED />}
           id="copy-button"
           onClick={[Function]}
@@ -129,7 +129,7 @@ exports[`Transform after the user has entered text in the input box when the tra
       Foo to Bar
     </Heading>
     <ForwardRef
-      href="#"
+      href="/oss/foo-to-bar"
     >
       about this transform
     </ForwardRef>
@@ -147,12 +147,12 @@ exports[`Transform after the user has entered text in the input box when the tra
         disabled={false}
         error={true}
         fullWidth={true}
-        helperText="There was an error! boom"
+        helperText="boom"
         id="input-box"
         label="Text to transform"
         multiline={true}
         onChange={[Function]}
-        placeholder="Enter FOO here"
+        placeholder="Enter Foo here"
         required={true}
         rows={12}
         value="stuff"
@@ -202,9 +202,9 @@ exports[`Transform after the user has entered text in the input box when the tra
         id="output-box"
         label="Transformed text"
         multiline={true}
-        placeholder="BAR will appear here"
+        placeholder="Bar will appear here"
         rows={12}
-        value=""
+        value="0"
         variant="outlined"
       />
       <Styled(MuiBox)
@@ -215,7 +215,7 @@ exports[`Transform after the user has entered text in the input box when the tra
         <WithStyles(ForwardRef(Button))
           color="primary"
           disableElevation={true}
-          disabled={true}
+          disabled={false}
           endIcon={<UNDEFINED />}
           id="copy-button"
           onClick={[Function]}
@@ -244,7 +244,7 @@ exports[`Transform after the user has entered text in the input box when the tra
       Foo to Bar
     </Heading>
     <ForwardRef
-      href="#"
+      href="/oss/foo-to-bar"
     >
       about this transform
     </ForwardRef>
@@ -262,12 +262,12 @@ exports[`Transform after the user has entered text in the input box when the tra
         disabled={false}
         error={true}
         fullWidth={true}
-        helperText="There was an error! Unable to transform text."
+        helperText="Unable to transform text."
         id="input-box"
         label="Text to transform"
         multiline={true}
         onChange={[Function]}
-        placeholder="Enter FOO here"
+        placeholder="Enter Foo here"
         required={true}
         rows={12}
         value="stuff"
@@ -317,9 +317,9 @@ exports[`Transform after the user has entered text in the input box when the tra
         id="output-box"
         label="Transformed text"
         multiline={true}
-        placeholder="BAR will appear here"
+        placeholder="Bar will appear here"
         rows={12}
-        value=""
+        value="0"
         variant="outlined"
       />
       <Styled(MuiBox)
@@ -330,7 +330,7 @@ exports[`Transform after the user has entered text in the input box when the tra
         <WithStyles(ForwardRef(Button))
           color="primary"
           disableElevation={true}
-          disabled={true}
+          disabled={false}
           endIcon={<UNDEFINED />}
           id="copy-button"
           onClick={[Function]}
@@ -359,7 +359,7 @@ exports[`Transform renders correctly 1`] = `
       Foo to Bar
     </Heading>
     <ForwardRef
-      href="#"
+      href="/oss/foo-to-bar"
     >
       about this transform
     </ForwardRef>
@@ -382,7 +382,7 @@ exports[`Transform renders correctly 1`] = `
         label="Text to transform"
         multiline={true}
         onChange={[Function]}
-        placeholder="Enter FOO here"
+        placeholder="Enter Foo here"
         required={true}
         rows={12}
         value=""
@@ -432,7 +432,7 @@ exports[`Transform renders correctly 1`] = `
         id="output-box"
         label="Transformed text"
         multiline={true}
-        placeholder="BAR will appear here"
+        placeholder="Bar will appear here"
         rows={12}
         value=""
         variant="outlined"

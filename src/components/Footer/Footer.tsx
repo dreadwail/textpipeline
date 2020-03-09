@@ -6,6 +6,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import React from 'react';
 
+import { ossPath } from '../../routes';
 import ListItemLink, { ListItemLinkProps } from '../ListItemLink';
 
 interface FooterProps {
@@ -19,7 +20,7 @@ const footer: FooterProps = {
   ],
   Resources: [
     { text: 'About', href: '#', isExternal: false },
-    { text: 'Open Source', href: '#', isExternal: false },
+    { text: 'Open Source', href: ossPath, isExternal: false },
     { text: 'Stats', href: '#', isExternal: false },
     { text: 'FAQ', href: '#', isExternal: false },
     { text: 'Privacy Policy', href: '#', isExternal: false },

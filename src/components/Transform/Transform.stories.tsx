@@ -1,10 +1,17 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 
+import { testTransform } from '../../fixtures';
+import routes from '../../routes';
 import Transform from './Transform';
 
-const execute = (input: string) => Promise.resolve(`${input} - transformed to a Bar!`);
-
 storiesOf('Transform', module).add('default', () => (
-  <Transform name="Foo to Bar" ossHref="#" inputType="FOO" outputType="BAR" execute={execute} />
+  <Transform
+    name={testTransform.name}
+    ossHref={`${routes.oss.path}/${testTransform.slug}`}
+    inputType={testTransform.inputType}
+    outputType={testTransform.outputType}
+    defaultOutput={testTransform.defaultOutput}
+    execute={testTransform.execute}
+  />
 ));

@@ -2,6 +2,8 @@ import Drawer from '@material-ui/core/Drawer';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import React from 'react';
 
+import { transformsPath } from '../../routes';
+import { bySlug } from '../../transforms';
 import Footer from '../Footer';
 import Header from '../Header';
 import TransformList from '../TransformList';
@@ -26,11 +28,12 @@ const useStyles = makeStyles(
 
 const Navigation: React.FC<NavigationProps> = ({ width }) => {
   const classes = useStyles({ width });
+  const transforms = Object.keys(bySlug).map(slug => bySlug[slug]);
   return (
     <Drawer className={classes.drawer} classes={{ paper: classes.drawerPaper }} variant="permanent" anchor="left">
       <Header />
       <NavigationSection isPrimary={true}>
-        <TransformList />
+        <TransformList transforms={transforms} transformsPath={transformsPath} />
       </NavigationSection>
       <NavigationSection>
         <Footer />

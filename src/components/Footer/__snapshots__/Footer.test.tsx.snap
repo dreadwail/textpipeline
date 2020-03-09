@@ -74,7 +74,7 @@ exports[`Footer renders correctly 1`] = `
         text="About"
       />
       <ListItemLink
-        href="#"
+        href="/oss"
         isExternal={false}
         key="Resources-Open Source"
         text="Open Source"

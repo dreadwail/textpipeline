@@ -16,13 +16,14 @@ const textFieldRowCount = 12;
 
 export interface TransformProps {
   readonly name: TextTransform['name'];
-  readonly ossHref: string;
   readonly inputType: TextTransform['inputType'];
   readonly outputType: TextTransform['outputType'];
+  readonly defaultOutput: TextTransform['defaultOutput'];
   readonly execute: TextTransform['execute'];
+  readonly ossHref: string;
 }
 
-const Transform: React.FC<TransformProps> = ({ name, ossHref, inputType, outputType, execute }) => {
+const Transform: React.FC<TransformProps> = ({ name, inputType, outputType, execute, defaultOutput, ossHref }) => {
   const [inputValue, setInputValue] = useState('');
   const [outputValue, setOutputValue] = useState('');
   const [error, setError] = useState<String | string | null>(null);
@@ -30,9 +31,7 @@ const Transform: React.FC<TransformProps> = ({ name, ossHref, inputType, outputT
   const [loading, setLoading] = useState(false);
 
   const isValid = !error;
-  const inputHelperText = isValid
-    ? "Once you've finished click the button to transform"
-    : `There was an error! ${error}`;
+  const inputHelperText = isValid ? "Once you've finished click the button to transform" : error;
 
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newInputValue = event.target.value;
@@ -40,13 +39,12 @@ const Transform: React.FC<TransformProps> = ({ name, ossHref, inputType, outputT
   };
 
   const onTransformClick = async () => {
+    setCopied(false);
+    setOutputValue('');
+    setError(null);
     if (inputValue === '') {
-      setCopied(false);
-      setOutputValue('');
-      setError(null);
       return;
     }
-    setCopied(false);
     setLoading(true);
     try {
       const output = await execute(inputValue);
@@ -59,6 +57,7 @@ const Transform: React.FC<TransformProps> = ({ name, ossHref, inputType, outputT
       } else {
         setError('Unable to transform text.');
       }
+      setOutputValue(defaultOutput);
     } finally {
       setLoading(false);
     }

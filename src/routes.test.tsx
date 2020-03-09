@@ -3,6 +3,12 @@ import React, { ComponentType } from 'react';
 
 import routes, { isKnownPath } from './routes';
 
+jest.mock('./components/Home', () => () => 'test-home-component');
+jest.mock('./components/NotFound', () => () => 'test-not-found-component');
+jest.mock('./components/OpenSource', () => () => 'test-open-source-component');
+jest.mock('./components/OpenSourceProject', () => () => 'test-open-source-project-component');
+jest.mock('./components/Transform', () => () => 'test-transform-component');
+
 describe('routes', () => {
   it('has the correct routes', () => {
     expect(routes).toMatchSnapshot();

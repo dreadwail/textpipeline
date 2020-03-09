@@ -2,16 +2,19 @@ import List from '@material-ui/core/List';
 import EditIcon from '@material-ui/icons/Edit';
 import React from 'react';
 
-import { buildTransformPath } from '../../routes';
-import transforms from '../../transforms';
+import { Transform } from '../../transforms';
 import ListItemLink from '../ListItemLink';
 
-const TransformList: React.FC = () => (
+export interface TransformListProps {
+  readonly transforms: Transform[];
+  readonly transformsPath: string;
+}
+
+const TransformList: React.FC<TransformListProps> = ({ transforms, transformsPath }) => (
   <List>
-    {Object.keys(transforms).map(slug => {
-      const { name } = transforms[slug];
-      return <ListItemLink key={slug} icon={EditIcon} text={name} href={buildTransformPath(slug)} />;
-    })}
+    {transforms.map(({ slug, name }) => (
+      <ListItemLink key={slug} icon={EditIcon} text={name} href={`${transformsPath}/${slug}`} />
+    ))}
   </List>
 );
 

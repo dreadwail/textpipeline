@@ -13,11 +13,12 @@ export interface ListItemLinkProps {
   readonly href: string;
   readonly icon?: typeof SvgIcon;
   readonly isExternal?: boolean;
+  readonly subtitle?: string;
 }
 
 const linkColor = 'textPrimary';
 
-const ListItemLink: React.FC<ListItemLinkProps> = ({ icon, text, href, isExternal }) => {
+const ListItemLink: React.FC<ListItemLinkProps> = ({ icon, text, href, isExternal, subtitle }) => {
   const Icon = icon || ArrowRightIcon;
   const LinkComponent = isExternal ? ExternalLink : InternalLink;
   const inset = !Icon;
@@ -29,7 +30,7 @@ const ListItemLink: React.FC<ListItemLinkProps> = ({ icon, text, href, isExterna
           <Icon />
         </ListItemIcon>
       )}
-      <ListItemText inset={inset}>{text}</ListItemText>
+      <ListItemText inset={inset} primary={text} secondary={subtitle} />
     </ListItem>
   );
 };

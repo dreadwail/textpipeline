@@ -3,7 +3,7 @@
 exports[`TransformList renders correctly 1`] = `
 <WithStyles(ForwardRef(List))>
   <ListItemLink
-    href="/transform/csv-to-xls"
+    href="/transforms/foo-to-bar"
     icon={
       Object {
         "$$typeof": Symbol(react.memo),
@@ -16,25 +16,8 @@ exports[`TransformList renders correctly 1`] = `
         },
       }
     }
-    key="csv-to-xls"
-    text="CSV to XLS"
-  />
-  <ListItemLink
-    href="/transform/xls-to-csv"
-    icon={
-      Object {
-        "$$typeof": Symbol(react.memo),
-        "compare": null,
-        "displayName": "EditIcon",
-        "muiName": "SvgIcon",
-        "type": Object {
-          "$$typeof": Symbol(react.forward_ref),
-          "render": [Function],
-        },
-      }
-    }
-    key="xls-to-csv"
-    text="XLS to CSV"
+    key="foo-to-bar"
+    text="Foo to Bar"
   />
 </WithStyles(ForwardRef(List))>
 `;
