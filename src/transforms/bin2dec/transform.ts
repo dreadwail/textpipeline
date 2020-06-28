@@ -5,7 +5,7 @@ import { Transform } from '../types';
 
 const containsNonBinary = (suspect: string): boolean => /[^0-1]+/.test(suspect);
 
-const csvToXls: Transform = {
+const transform: Transform = {
   name: 'Binary To Decimal',
   slug: 'binary-to-decimal',
   inputType: 'Binary',
@@ -32,4 +32,4 @@ const csvToXls: Transform = {
   },
 };
 
-export default csvToXls;
+export default transform;
