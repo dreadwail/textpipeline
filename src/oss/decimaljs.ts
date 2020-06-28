@@ -1,20 +1,14 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+import { mit } from '../licenses';
+import { OpenSourceProject } from './types';
 
-exports[`bin2dec has the correct attributes 1`] = `
-Object {
-  "defaultOutput": "0",
-  "execute": [Function],
-  "inputType": "Binary",
-  "name": "Binary To Decimal",
-  "outputType": "Decimal",
-  "project": Object {
-    "description": "An arbitrary-precision Decimal type for JavaScript.",
-    "license": Object {
-      "href": "https://choosealicense.com/licenses/mit",
-      "name": "MIT",
-      "slug": "mit",
-    },
-    "licenseText": "
+export const decimalJs: OpenSourceProject = {
+  name: 'decimal.js',
+  description: 'An arbitrary-precision Decimal type for JavaScript.',
+  slug: 'decimal-js',
+  projectHref: 'http://mikemcl.github.io/decimal.js/',
+  repositoryHref: 'https://github.com/MikeMcl/decimal.js/',
+  license: mit,
+  licenseText: `
 The MIT Licence.
 
 Copyright (c) 2019 Michael Mclaughlin
@@ -37,12 +31,5 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-",
-    "name": "decimal.js",
-    "projectHref": "http://mikemcl.github.io/decimal.js/",
-    "repositoryHref": "https://github.com/MikeMcl/decimal.js/",
-    "slug": "decimal-js",
-  },
-  "slug": "binary-to-decimal",
-}
-`;
+`,
+};

@@ -347,21 +347,21 @@ exports[`OpenSource renders correctly 1`] = `
       </WithStyles(ForwardRef(TableHead))>
       <WithStyles(ForwardRef(TableBody))>
         <WithStyles(ForwardRef(TableRow))
-          key="decimal-js-light"
+          key="decimal-js"
         >
           <WithStyles(ForwardRef(TableCell))>
             <ForwardRef
-              href="http://mikemcl.github.io/decimal.js-light"
+              href="http://mikemcl.github.io/decimal.js/"
             >
-              decimal.js-light
+              decimal.js
             </ForwardRef>
           </WithStyles(ForwardRef(TableCell))>
           <WithStyles(ForwardRef(TableCell))>
             <ForwardRef
-              href="/oss/decimal-js-light"
+              href="/oss/decimal-js"
             >
               View Transforms (
-              1
+              2
               )
             </ForwardRef>
           </WithStyles(ForwardRef(TableCell))>

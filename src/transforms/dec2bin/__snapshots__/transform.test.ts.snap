@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`bin2dec has the correct attributes 1`] = `
+exports[`dec2bin has the correct attributes 1`] = `
 Object {
   "defaultOutput": "0",
   "execute": [Function],
-  "inputType": "Binary",
-  "name": "Binary To Decimal",
-  "outputType": "Decimal",
+  "inputType": "Decimal",
+  "name": "Decimal to Binary",
+  "outputType": "Binary",
   "project": Object {
     "description": "An arbitrary-precision Decimal type for JavaScript.",
     "license": Object {
@@ -43,6 +43,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     "repositoryHref": "https://github.com/MikeMcl/decimal.js/",
     "slug": "decimal-js",
   },
-  "slug": "binary-to-decimal",
+  "slug": "decimal-to-binary",
 }
 `;

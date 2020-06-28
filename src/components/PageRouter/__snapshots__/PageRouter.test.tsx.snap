@@ -29,8 +29,14 @@ exports[`PageRouter renders correctly 1`] = `
   <Route
     component={[Function]}
     exact={true}
-    key="decimal.js-light"
-    path="/oss/decimal-js-light"
+    key="Decimal to Binary"
+    path="/transforms/decimal-to-binary"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    key="decimal.js"
+    path="/oss/decimal-js"
   />
   <Route
     path="*"
