@@ -6,14 +6,25 @@ exports[`routes can render route: Binary To Decimal 1`] = `
   execute={[Function]}
   inputType="Binary"
   name="Binary To Decimal"
-  ossHref="/oss/decimal-js-light"
+  ossHref="/oss/decimal-js"
   outputType="Decimal"
 />
 `;
 
-exports[`routes can render route: decimal.js-light 1`] = `
+exports[`routes can render route: Decimal to Binary 1`] = `
 <Component
-  description="The light version of decimal.js, an arbitrary-precision Decimal type for JavaScript."
+  defaultOutput="0"
+  execute={[Function]}
+  inputType="Decimal"
+  name="Decimal to Binary"
+  ossHref="/oss/decimal-js"
+  outputType="Binary"
+/>
+`;
+
+exports[`routes can render route: decimal.js 1`] = `
+<Component
+  description="An arbitrary-precision Decimal type for JavaScript."
   license={
     Object {
       "href": "https://choosealicense.com/licenses/mit",
@@ -22,9 +33,9 @@ exports[`routes can render route: decimal.js-light 1`] = `
     }
   }
   licenseText="
-The MIT Expat Licence.
+The MIT Licence.
 
-Copyright (c) 2018 Michael Mclaughlin
+Copyright (c) 2019 Michael Mclaughlin
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -44,11 +55,11 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-  "
-  name="decimal.js-light"
-  projectHref="http://mikemcl.github.io/decimal.js-light"
-  repositoryHref="https://github.com/MikeMcl/decimal.js-light/"
-  slug="decimal-js-light"
+"
+  name="decimal.js"
+  projectHref="http://mikemcl.github.io/decimal.js/"
+  repositoryHref="https://github.com/MikeMcl/decimal.js/"
+  slug="decimal-js"
   transformsPath="/transforms"
 />
 `;
@@ -70,10 +81,15 @@ Object {
     "exact": true,
     "path": "/transforms/binary-to-decimal",
   },
-  "decimal.js-light": Object {
+  "Decimal to Binary": Object {
     "component": [Function],
     "exact": true,
-    "path": "/oss/decimal-js-light",
+    "path": "/transforms/decimal-to-binary",
+  },
+  "decimal.js": Object {
+    "component": [Function],
+    "exact": true,
+    "path": "/oss/decimal-js",
   },
   "home": Object {
     "component": [Function],

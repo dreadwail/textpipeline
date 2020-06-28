@@ -3,13 +3,13 @@ import Decimal from 'decimal.js';
 import { decimalJs } from '../../oss';
 import { Transform } from '../types';
 
-const containsNonBinary = (suspect: string): boolean => /[^0-1]+/.test(suspect);
+const containsNonDecimal = (suspect: string): boolean => !/^(\d*\.)?\d+$/.test(suspect);
 
 const transform: Transform = {
-  name: 'Binary To Decimal',
-  slug: 'binary-to-decimal',
-  inputType: 'Binary',
-  outputType: 'Decimal',
+  name: 'Decimal to Binary',
+  slug: 'decimal-to-binary',
+  inputType: 'Decimal',
+  outputType: 'Binary',
   project: decimalJs,
   defaultOutput: '0',
   execute: async input => {
@@ -23,12 +23,12 @@ const transform: Transform = {
       throw new Error('No input detected.');
     }
 
-    if (containsNonBinary(sanitized)) {
-      throw new Error('Invalid binary input.');
+    if (containsNonDecimal(sanitized)) {
+      throw new Error('Invalid decimal input.');
     }
 
-    const decimal = new Decimal(`0b${sanitized}`);
-    return decimal.toFixed(0);
+    const decimal = new Decimal(sanitized);
+    return decimal.toBinary().substring(2);
   },
 };
 
