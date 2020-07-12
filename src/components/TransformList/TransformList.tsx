@@ -1,9 +1,8 @@
 import List from '@material-ui/core/List';
 import EditIcon from '@material-ui/icons/Edit';
+import ListItemLink from 'components/ListItemLink';
 import React from 'react';
-
-import { Transform } from '../../transforms';
-import ListItemLink from '../ListItemLink';
+import { Transform } from 'transforms';
 
 export interface TransformListProps {
   readonly transforms: Transform[];

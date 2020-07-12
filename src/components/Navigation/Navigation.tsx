@@ -1,12 +1,12 @@
 import Drawer from '@material-ui/core/Drawer';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
+import Footer from 'components/Footer';
+import Header from 'components/Header';
+import TransformList from 'components/TransformList';
 import React from 'react';
+import { transformsPath } from 'routes';
+import { bySlug } from 'transforms';
 
-import { transformsPath } from '../../routes';
-import { bySlug } from '../../transforms';
-import Footer from '../Footer';
-import Header from '../Header';
-import TransformList from '../TransformList';
 import NavigationSection from './NavigationSection';
 
 export interface NavigationProps {

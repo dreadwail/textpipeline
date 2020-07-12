@@ -1,4 +1,5 @@
-import { Transform } from '../transforms';
+import { Transform } from 'transforms';
+
 import { testOss } from './oss';
 
 export const testTransform: Transform = {

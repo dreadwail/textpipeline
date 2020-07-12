@@ -1,6 +1,6 @@
 import Decimal from 'decimal.js';
+import { decimalJs } from 'oss';
 
-import { decimalJs } from '../../oss';
 import { Transform } from '../types';
 
 const containsNonBinary = (suspect: string): boolean => /[^0-1]+/.test(suspect);

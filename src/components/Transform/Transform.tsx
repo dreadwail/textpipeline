@@ -6,11 +6,10 @@ import Typography from '@material-ui/core/Typography';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import RepeatIcon from '@material-ui/icons/Repeat';
 import copy from 'clipboard-copy';
+import Heading from 'components/Heading';
+import InternalLink from 'components/InternalLink';
 import React, { ChangeEvent, useState } from 'react';
-
-import { Transform as TextTransform } from '../../transforms/types';
-import Heading from '../Heading';
-import InternalLink from '../InternalLink';
+import { Transform as TextTransform } from 'transforms/types';
 
 const textFieldRowCount = 12;
 
@@ -35,14 +34,14 @@ const Transform: React.FC<TransformProps> = ({ name, inputType, outputType, exec
 
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newInputValue = event.target.value;
-    setInputValue(newInputValue || '');
+    setInputValue(newInputValue);
   };
 
   const onTransformClick = async () => {
     setCopied(false);
     setOutputValue('');
     setError(null);
-    if (inputValue === '') {
+    if (inputValue.trim() === '') {
       return;
     }
     setLoading(true);
@@ -85,7 +84,7 @@ const Transform: React.FC<TransformProps> = ({ name, inputType, outputType, exec
       <Box my={3}>
         <form noValidate autoComplete="off">
           <TextField
-            id="input-box"
+            id="text-to-transform"
             label="Text to transform"
             placeholder={`Enter ${inputType} here`}
             helperText={inputHelperText}
@@ -105,7 +104,6 @@ const Transform: React.FC<TransformProps> = ({ name, inputType, outputType, exec
             {loading && <CircularProgress />}
             <Box mx={1}>
               <Button
-                id="transform-button"
                 onClick={onTransformClick}
                 variant="contained"
                 color="primary"
@@ -118,7 +116,6 @@ const Transform: React.FC<TransformProps> = ({ name, inputType, outputType, exec
               </Button>
             </Box>
             <Button
-              id="clear-button"
               onClick={onClearClick}
               variant="outlined"
               disableElevation
@@ -129,7 +126,7 @@ const Transform: React.FC<TransformProps> = ({ name, inputType, outputType, exec
             </Button>
           </Box>
           <TextField
-            id="output-box"
+            id="transformed-text"
             label="Transformed text"
             placeholder={`${outputType} will appear here`}
             variant="outlined"
@@ -146,11 +143,10 @@ const Transform: React.FC<TransformProps> = ({ name, inputType, outputType, exec
           <Box display="flex" justifyContent="flex-end" my={3}>
             {copied && (
               <Box mx={1} color="success.main">
-                <Typography id="copied-indicator">Copied!</Typography>
+                <Typography>Copied!</Typography>
               </Box>
             )}
             <Button
-              id="copy-button"
               onClick={onCopyToClipboardClick}
               variant="contained"
               color="primary"

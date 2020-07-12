@@ -1,96 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`routes can render route: Binary To Decimal 1`] = `
-<Component
-  defaultOutput="0"
-  execute={[Function]}
-  inputType="Binary"
-  name="Binary To Decimal"
-  ossHref="/oss/decimal-js"
-  outputType="Decimal"
-/>
-`;
-
-exports[`routes can render route: Decimal to Binary 1`] = `
-<Component
-  defaultOutput="0"
-  execute={[Function]}
-  inputType="Decimal"
-  name="Decimal to Binary"
-  ossHref="/oss/decimal-js"
-  outputType="Binary"
-/>
-`;
-
-exports[`routes can render route: decimal.js 1`] = `
-<Component
-  description="An arbitrary-precision Decimal type for JavaScript."
-  license={
-    Object {
-      "href": "https://choosealicense.com/licenses/mit",
-      "name": "MIT",
-      "slug": "mit",
-    }
-  }
-  licenseText="
-The MIT Licence.
-
-Copyright (c) 2019 Michael Mclaughlin
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-'Software'), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-"
-  name="decimal.js"
-  projectHref="http://mikemcl.github.io/decimal.js/"
-  repositoryHref="https://github.com/MikeMcl/decimal.js/"
-  slug="decimal-js"
-  transformsPath="/transforms"
-/>
-`;
-
-exports[`routes can render route: home 1`] = `"test-home-component"`;
-
-exports[`routes can render route: oss 1`] = `
-<Component
-  ossPath="/oss"
-/>
-`;
-
-exports[`routes can render route: transforms 1`] = `"test-not-found-component"`;
-
 exports[`routes has the correct routes 1`] = `
 Object {
-  "Binary To Decimal": Object {
-    "component": [Function],
-    "exact": true,
-    "path": "/transforms/binary-to-decimal",
-  },
-  "Decimal to Binary": Object {
-    "component": [Function],
-    "exact": true,
-    "path": "/transforms/decimal-to-binary",
-  },
-  "decimal.js": Object {
-    "component": [Function],
-    "exact": true,
-    "path": "/oss/decimal-js",
-  },
   "home": Object {
     "component": [Function],
     "exact": true,
@@ -101,10 +12,20 @@ Object {
     "exact": true,
     "path": "/oss",
   },
-  "transforms": Object {
+  "oss-decimal-js": Object {
     "component": [Function],
     "exact": true,
-    "path": "/transforms",
+    "path": "/oss/decimal-js",
+  },
+  "transform-binary-to-decimal": Object {
+    "component": [Function],
+    "exact": true,
+    "path": "/transforms/binary-to-decimal",
+  },
+  "transform-decimal-to-binary": Object {
+    "component": [Function],
+    "exact": true,
+    "path": "/transforms/decimal-to-binary",
   },
 }
 `;

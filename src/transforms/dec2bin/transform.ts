@@ -1,6 +1,6 @@
 import Decimal from 'decimal.js';
+import { decimalJs } from 'oss';
 
-import { decimalJs } from '../../oss';
 import { Transform } from '../types';
 
 const containsNonDecimal = (suspect: string): boolean => !/^(\d*\.)?\d+$/.test(suspect);

@@ -1,4 +1,4 @@
-import { OpenSourceProject } from '../oss';
+import { OpenSourceProject } from 'oss';
 
 export interface Transform {
   readonly name: string;

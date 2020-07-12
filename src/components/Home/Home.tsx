@@ -2,9 +2,8 @@ import Box from '@material-ui/core/Box';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import RepeatIcon from '@material-ui/icons/Repeat';
+import Heading from 'components/Heading';
 import React from 'react';
-
-import Heading from '../Heading';
 
 const useStyles = makeStyles(() =>
   createStyles({

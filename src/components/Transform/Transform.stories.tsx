@@ -1,8 +1,8 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
+import routes from 'routes';
+import { testTransform } from 'testing/fixtures';
 
-import { testTransform } from '../../fixtures';
-import routes from '../../routes';
 import Transform from './Transform';
 
 storiesOf('Transform', module).add('default', () => (
