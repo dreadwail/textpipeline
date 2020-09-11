@@ -1,5 +1,5 @@
-import { mit } from '../licenses';
-import { OpenSourceProject } from '../oss';
+import { mit } from 'licenses';
+import { OpenSourceProject } from 'oss';
 
 export const testOss: OpenSourceProject = {
   name: 'Test Open Source Project',

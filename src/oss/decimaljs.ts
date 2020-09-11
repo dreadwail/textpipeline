@@ -1,4 +1,5 @@
-import { mit } from '../licenses';
+import { mit } from 'licenses';
+
 import { OpenSourceProject } from './types';
 
 export const decimalJs: OpenSourceProject = {

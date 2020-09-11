@@ -2,14 +2,13 @@ import React from 'react';
 import { matchPath, RouteProps } from 'react-router-dom';
 
 import Home from './components/Home';
-import NotFound from './components/NotFound';
 import OpenSource from './components/OpenSource';
 import OpenSourceProject from './components/OpenSourceProject';
 import Transform from './components/Transform';
 import { bySlug as ossBySlug } from './oss';
 import { bySlug as transformsBySlug } from './transforms';
 
-type BaseRouteKey = 'home' | 'oss' | 'transforms';
+type BaseRouteKey = 'home' | 'oss';
 
 type PathableRouteProps = RouteProps & { path: string };
 
@@ -28,11 +27,6 @@ const baseRoutes: Record<BaseRouteKey, PathableRouteProps> = {
     component: () => <OpenSource ossPath={ossPath} />,
     exact: true,
   },
-  transforms: {
-    path: transformsPath,
-    component: NotFound,
-    exact: true,
-  },
 };
 
 const transformRoutes: Record<string, PathableRouteProps> = Object.keys(transformsBySlug).reduce(
@@ -40,7 +34,7 @@ const transformRoutes: Record<string, PathableRouteProps> = Object.keys(transfor
     const { name, inputType, outputType, project, defaultOutput, execute } = transformsBySlug[slug];
     return {
       ...transformRoutesSoFar,
-      [name]: {
+      [`transform-${slug}`]: {
         path: `${transformsPath}/${slug}`,
         component: () => (
           <Transform
@@ -63,7 +57,7 @@ const ossRoutes: Record<string, PathableRouteProps> = Object.keys(ossBySlug).red
   const { name, description, projectHref, repositoryHref, license, licenseText } = ossBySlug[slug];
   return {
     ...ossRoutesSoFar,
-    [name]: {
+    [`oss-${slug}`]: {
       path: `${ossPath}/${slug}`,
       component: () => (
         <OpenSourceProject

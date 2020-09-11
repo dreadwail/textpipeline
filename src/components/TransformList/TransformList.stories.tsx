@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
+import { bySlug } from 'transforms';
 
-import { bySlug } from '../../transforms';
 import TransformList from './TransformList';
 
 storiesOf('TransformList', module).add('default', () => {

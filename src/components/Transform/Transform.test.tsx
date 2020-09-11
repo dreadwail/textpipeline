@@ -1,18 +1,17 @@
-import CircularProgress from '@material-ui/core/CircularProgress';
 import copy from 'clipboard-copy';
-import { shallow, ShallowWrapper } from 'enzyme';
 import React from 'react';
+import routes from 'routes';
+import { testTransform } from 'testing/fixtures';
+import { act, fireEvent, render, RenderResult } from 'testing/react';
 
-import { testTransform } from '../../fixtures';
-import routes from '../../routes';
-import Transform, { TransformProps } from './Transform';
+import Transform from './Transform';
 
 jest.mock('clipboard-copy');
 
 class Deferred {
-  promise: Promise<void>;
+  promise: Promise<string>;
   reject: (error: any) => void = () => {};
-  resolve: () => void = () => {};
+  resolve: (outputValue: string) => void = () => {};
 
   constructor() {
     this.promise = new Promise((resolve, reject) => {
@@ -22,21 +21,30 @@ class Deferred {
   }
 }
 
-const getInputBox = (rendered: ShallowWrapper<TransformProps>) => rendered.find('#input-box');
-const getOutputBox = (rendered: ShallowWrapper<TransformProps>) => rendered.find('#output-box');
-const getTransformButton = (rendered: ShallowWrapper<TransformProps>) => rendered.find('#transform-button');
-const getClearButton = (rendered: ShallowWrapper<TransformProps>) => rendered.find('#clear-button');
-const getCopyButton = (rendered: ShallowWrapper<TransformProps>) => rendered.find('#copy-button');
-const getCopiedIndicator = (rendered: ShallowWrapper<TransformProps>) => rendered.find('#copied-indicator');
-const getLoadingIndicator = (rendered: ShallowWrapper<TransformProps>) => rendered.find(CircularProgress);
+const getMaterialButtonByText = (result: RenderResult, text: string): HTMLButtonElement => {
+  const elementWithText = result.getByText(text);
+  const buttonNearby = elementWithText.closest('button');
+  if (!buttonNearby) {
+    throw new Error(`Unable to locate a button near the element having '${text}'`);
+  }
+  return buttonNearby;
+};
+
+const getInputBox = (result: RenderResult) => result.getByLabelText(/Text to transform/i);
+const getOutputBox = (result: RenderResult) => result.getByLabelText(/Transformed text/i);
+const getTransformButton = (result: RenderResult) => getMaterialButtonByText(result, 'Transform');
+const getClearButton = (result: RenderResult) => getMaterialButtonByText(result, 'Clear');
+const getCopyButton = (result: RenderResult) => getMaterialButtonByText(result, 'Copy');
+const queryCopiedIndicator = (result: RenderResult) => result.queryByText('Copied!');
+const queryLoadingIndicator = (result: RenderResult) => result.queryByRole('progressbar');
 
 describe('Transform', () => {
-  let execute: TransformProps['execute'];
-  let rendered: ShallowWrapper<TransformProps>;
+  let execute: jest.Mock;
+  let rendered: RenderResult;
 
   beforeEach(() => {
     execute = jest.fn(testTransform.execute);
-    rendered = shallow(
+    rendered = render(
       <Transform
         name={testTransform.name}
         ossHref={`${routes.oss.path}/${testTransform.slug}`}
@@ -48,77 +56,72 @@ describe('Transform', () => {
     );
   });
 
-  it('renders correctly', () => {
-    expect(rendered).toMatchSnapshot();
-  });
-
   describe('before the user has entered text in the input box', () => {
-    beforeEach(() => {
-      getInputBox(rendered).simulate('change', { target: { value: '' } });
-    });
-
     it('renders the transform button disabled', () => {
-      expect(getTransformButton(rendered).prop('disabled')).toBe(true);
+      expect(getTransformButton(rendered)).toBeDisabled();
     });
 
     it('renders the clear button disabled', () => {
-      expect(getClearButton(rendered).prop('disabled')).toBe(true);
+      expect(getClearButton(rendered)).toBeDisabled();
     });
 
     it('renders the copy-to-clipboard button disabled', () => {
-      expect(getCopyButton(rendered).prop('disabled')).toBe(true);
+      expect(getCopyButton(rendered)).toBeDisabled();
     });
   });
 
   describe('when text is typed into the input box', () => {
     beforeEach(() => {
-      getInputBox(rendered).simulate('change', { target: { value: 'stuff' } });
+      fireEvent.change(getInputBox(rendered), { target: { value: 'stuff' } });
     });
 
     it('updates the state with the text', () => {
-      expect(getInputBox(rendered).prop('value')).toEqual('stuff');
+      expect(getInputBox(rendered)).toHaveValue('stuff');
     });
   });
 
   describe('when no text was input and the transform button is clicked', () => {
     beforeEach(() => {
-      getInputBox(rendered).simulate('change', { target: { value: '' } });
-      getTransformButton(rendered).simulate('click');
+      fireEvent.change(getInputBox(rendered), { target: { value: ' ' } });
+      fireEvent.click(getTransformButton(rendered));
     });
 
     it('does not place any text in the output box', () => {
-      expect(getOutputBox(rendered).prop('value')).toEqual('');
+      expect(getOutputBox(rendered)).toHaveValue('');
     });
 
     it('resets the copied state', () => {
-      expect(getCopiedIndicator(rendered).length).toEqual(0);
+      expect(queryCopiedIndicator(rendered)).not.toBeInTheDocument();
     });
   });
 
   describe('after the user has entered text in the input box', () => {
+    let inputValue: string;
+
     beforeEach(() => {
-      getInputBox(rendered).simulate('change', { target: { value: 'stuff' } });
+      inputValue = 'stuff';
+      fireEvent.change(getInputBox(rendered), { target: { value: inputValue } });
     });
 
     describe('when the clear button is clicked', () => {
       beforeEach(() => {
-        getClearButton(rendered).simulate('click');
+        fireEvent.click(getClearButton(rendered));
       });
 
       it('resets the input box to empty', () => {
-        expect(getInputBox(rendered).prop('value')).toEqual('');
+        expect(getInputBox(rendered)).toHaveValue('');
       });
 
       it('renders the transform button disabled', () => {
-        expect(getTransformButton(rendered).prop('disabled')).toBe(true);
+        expect(getTransformButton(rendered)).toBeDisabled();
       });
 
       it('renders the clear button disabled', () => {
-        expect(getClearButton(rendered).prop('disabled')).toBe(true);
+        expect(getClearButton(rendered)).toBeDisabled();
       });
 
       it('renders the copy-to-clipboard button disabled', () => {
-        expect(getCopyButton(rendered).prop('disabled')).toBe(true);
+        expect(getCopyButton(rendered)).toBeDisabled();
       });
     });
 
@@ -132,76 +135,68 @@ describe('Transform', () => {
 
       describe('when the transform button is clicked', () => {
         beforeEach(() => {
-          getTransformButton(rendered).simulate('click');
+          fireEvent.click(getTransformButton(rendered));
         });
 
         describe('before the transform completes', () => {
           it('displays a loading indicator', () => {
-            expect(getLoadingIndicator(rendered).length).toEqual(1);
+            expect(queryLoadingIndicator(rendered)).toBeInTheDocument();
           });
         });
 
-        describe.each([
-          { error: 'boom', expectedMessage: 'boom' },
-          { error: new Error('boom'), expectedMessage: 'boom' },
-          { error: 42, expectedMessage: 'Unable to transform text.' },
-        ])('after the transform fails', ({ error, expectedMessage }) => {
-          beforeEach(() => {
-            deferred.reject(error);
-          });
-
-          it('no longer displays a loading indicator', async () => {
-            try {
-              await deferred.promise;
-            } catch {
-              expect(getLoadingIndicator(rendered).length).toEqual(0);
-            }
-          });
-
-          it('sets the error state', () => {
-            expect(getInputBox(rendered).prop('helperText')).toEqual(expectedMessage);
-          });
-
-          it('sets the output to the default output value from the transform', () => {
-            expect(getOutputBox(rendered).prop('value')).toEqual(testTransform.defaultOutput);
-          });
-
-          it('renders correctly', () => {
-            expect(rendered).toMatchSnapshot();
-          });
-
-          describe('when the clear button is clicked', () => {
-            beforeEach(() => {
-              getClearButton(rendered).simulate('click');
+        describe.each([['boom', 'boom'], [new Error('boom'), 'boom'], [42, 'Unable to transform text.']])(
+          'after the transform fails with %p',
+          (error, expectedMessage) => {
+            beforeEach(async () => {
+              await act(async () => {
+                deferred.reject(error);
+                await Promise.allSettled([deferred.promise]);
+              });
             });
 
-            it('resets the input box to empty', () => {
-              expect(getInputBox(rendered).prop('value')).toEqual('');
+            it('no longer displays a loading indicator', async () => {
+              expect(queryLoadingIndicator(rendered)).not.toBeInTheDocument();
             });
 
-            it('resets the output box to empty', () => {
-              expect(getOutputBox(rendered).prop('value')).toEqual('');
+            it('sets the error state', () => {
+              expect(rendered.queryByText(expectedMessage)).toBeInTheDocument();
             });
 
-            it('renders the transform button disabled', () => {
-              expect(getTransformButton(rendered).prop('disabled')).toBe(true);
+            it('sets the output to the default output value from the transform', () => {
+              expect(getOutputBox(rendered)).toHaveValue(testTransform.defaultOutput);
             });
 
-            it('renders the clear button disabled', () => {
-              expect(getClearButton(rendered).prop('disabled')).toBe(true);
-            });
+            describe('when the clear button is clicked', () => {
+              beforeEach(() => {
+                fireEvent.click(getClearButton(rendered));
+              });
 
-            it('renders the copy-to-clipboard button disabled', () => {
-              expect(getCopyButton(rendered).prop('disabled')).toBe(true);
-            });
+              it('resets the input box to empty', () => {
+                expect(getInputBox(rendered)).toHaveValue('');
+              });
 
-            it('clears the error state', () => {
-              expect(getInputBox(rendered).prop('helperText')).toEqual(
-                "Once you've finished click the button to transform"
-              );
+              it('resets the output box to empty', () => {
+                expect(getOutputBox(rendered)).toHaveValue('');
+              });
+
+              it('renders the transform button disabled', () => {
+                expect(getTransformButton(rendered)).toBeDisabled();
+              });
+
+              it('renders the clear button disabled', () => {
+                expect(getClearButton(rendered)).toBeDisabled();
+              });
+
+              it('renders the copy-to-clipboard button disabled', () => {
+                expect(getCopyButton(rendered)).toBeDisabled();
+              });
+
+              it('clears the error state', () => {
+                expect(rendered.queryByText("Once you've finished click the button to transform")).toBeInTheDocument();
+              });
             });
-          });
-        });
+          }
+        );
       });
     });
 
@@ -215,78 +210,86 @@ describe('Transform', () => {
 
       describe('when the transform button is clicked', () => {
         beforeEach(() => {
-          getTransformButton(rendered).simulate('click');
+          fireEvent.click(getTransformButton(rendered));
         });
 
         describe('before the transform completes', () => {
           it('displays a loading indicator', () => {
-            expect(getLoadingIndicator(rendered).length).toEqual(1);
+            expect(queryLoadingIndicator(rendered)).toBeInTheDocument();
           });
         });
 
         describe('after the transform succeeds', () => {
-          beforeEach(() => {
-            deferred.resolve();
+          let outputValue: string;
+
+          beforeEach(async () => {
+            await act(async () => {
+              outputValue = 'test-output';
+              deferred.resolve(outputValue);
+              await deferred.promise;
+            });
           });
 
           it('no longer displays a loading indicator', async () => {
-            await deferred.promise;
-            expect(getLoadingIndicator(rendered).length).toEqual(0);
+            expect(queryLoadingIndicator(rendered)).not.toBeInTheDocument();
           });
 
           describe('when the copy-to-clipboard button is clicked', () => {
             beforeEach(() => {
-              getCopyButton(rendered).simulate('click');
+              fireEvent.click(getCopyButton(rendered));
             });
 
             it('copies the text to the clipboard', () => {
-              expect(copy).toHaveBeenCalled();
+              expect(copy).toHaveBeenCalledWith(outputValue);
             });
 
             it('displays an indication that the text was copied', () => {
-              expect(getCopiedIndicator(rendered).length).toEqual(1);
+              expect(queryCopiedIndicator(rendered)).toBeInTheDocument();
             });
 
             describe('when the transform button is clicked again', () => {
-              beforeEach(() => {
-                getTransformButton(rendered).simulate('click');
+              beforeEach(async () => {
+                fireEvent.click(getTransformButton(rendered));
+
+                await act(async () => {
+                  deferred.resolve(outputValue);
+                  await deferred.promise;
+                });
               });
 
               it('clears the copied state', () => {
-                expect(getCopiedIndicator(rendered).length).toEqual(0);
+                expect(queryCopiedIndicator(rendered)).not.toBeInTheDocument();
               });
             });
           });
 
           describe('when the clear button is clicked', () => {
             beforeEach(() => {
-              getClearButton(rendered).simulate('click');
+              fireEvent.click(getClearButton(rendered));
             });
 
             it('resets the input box to empty', () => {
-              expect(getInputBox(rendered).prop('value')).toEqual('');
+              expect(getInputBox(rendered)).toHaveValue('');
             });
 
             it('resets the output box to empty', () => {
-              expect(getOutputBox(rendered).prop('value')).toEqual('');
+              expect(getOutputBox(rendered)).toHaveValue('');
             });
 
             it('renders the transform button disabled', () => {
-              expect(getTransformButton(rendered).prop('disabled')).toBe(true);
+              expect(getTransformButton(rendered)).toBeDisabled();
             });
 
             it('renders the clear button disabled', () => {
-              expect(getClearButton(rendered).prop('disabled')).toBe(true);
+              expect(getClearButton(rendered)).toBeDisabled();
             });
 
             it('renders the copy-to-clipboard button disabled', () => {
-              expect(getCopyButton(rendered).prop('disabled')).toBe(true);
+              expect(getCopyButton(rendered)).toBeDisabled();
             });
 
             it('clears the error state', () => {
-              expect(getInputBox(rendered).prop('helperText')).toEqual(
-                "Once you've finished click the button to transform"
-              );
+              expect(rendered.queryByText("Once you've finished click the button to transform")).toBeInTheDocument();
             });
           });
         });

@@ -3,10 +3,9 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+import ExternalLink from 'components/ExternalLink';
+import InternalLink from 'components/InternalLink';
 import React from 'react';
-
-import ExternalLink from '../ExternalLink';
-import InternalLink from '../InternalLink';
 
 export interface ListItemLinkProps {
   readonly text: string;

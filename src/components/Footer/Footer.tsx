@@ -4,10 +4,9 @@ import List from '@material-ui/core/List';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import TwitterIcon from '@material-ui/icons/Twitter';
+import ListItemLink, { ListItemLinkProps } from 'components/ListItemLink';
 import React from 'react';
-
-import { ossPath } from '../../routes';
-import ListItemLink, { ListItemLinkProps } from '../ListItemLink';
+import { ossPath } from 'routes';
 
 interface FooterProps {
   [key: string]: ListItemLinkProps[];

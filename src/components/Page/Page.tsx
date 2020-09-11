@@ -1,10 +1,9 @@
 import Box from '@material-ui/core/Box';
 import Content from 'components/Content';
+import Head from 'components/Head';
 import Navigation from 'components/Navigation';
 import PageRouter from 'components/PageRouter';
 import React from 'react';
-
-import Head from '../Head';
 
 const drawerWidth = 240;
 

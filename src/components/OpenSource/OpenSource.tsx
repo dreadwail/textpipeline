@@ -7,13 +7,12 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Typography from '@material-ui/core/Typography';
+import ExternalLink from 'components/ExternalLink';
+import Heading from 'components/Heading';
+import InternalLink from 'components/InternalLink';
+import { bySlug as ossBySlug } from 'oss';
 import React from 'react';
-
-import { bySlug as ossBySlug } from '../../oss';
-import { bySlug as transformsBySlug } from '../../transforms';
-import ExternalLink from '../ExternalLink';
-import Heading from '../Heading';
-import InternalLink from '../InternalLink';
+import { bySlug as transformsBySlug } from 'transforms';
 
 export interface OpenSourceProps {
   readonly ossPath: string;

@@ -1,8 +1,7 @@
 import Box from '@material-ui/core/Box';
+import Heading from 'components/Heading';
+import InternalLink from 'components/InternalLink';
 import React from 'react';
-
-import Heading from '../Heading';
-import InternalLink from '../InternalLink';
 
 const Header: React.FC = () => (
   <Box p={2}>

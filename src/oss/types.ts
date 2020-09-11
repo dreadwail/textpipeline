@@ -1,4 +1,4 @@
-import { License } from '../licenses';
+import { License } from 'licenses';
 
 export interface OpenSourceProject {
   readonly name: string;

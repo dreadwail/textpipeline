@@ -4,13 +4,12 @@ import List from '@material-ui/core/List';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import LinkIcon from '@material-ui/icons/Link';
+import Heading from 'components/Heading';
+import ListItemLink from 'components/ListItemLink';
+import TransformList from 'components/TransformList';
+import { License } from 'licenses';
 import React from 'react';
-
-import { License } from '../../licenses';
-import { byProjectSlug } from '../../transforms';
-import Heading from '../Heading';
-import ListItemLink from '../ListItemLink';
-import TransformList from '../TransformList';
+import { byProjectSlug } from 'transforms';
 
 export interface OpenSourceProjectProps {
   readonly name: string;

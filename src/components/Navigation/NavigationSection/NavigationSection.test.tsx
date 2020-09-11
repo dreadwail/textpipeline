@@ -1,38 +1,21 @@
-import { shallow, ShallowWrapper } from 'enzyme';
 import React from 'react';
+import { render } from 'testing/react';
 
 import NavigationSection from './NavigationSection';
 
 describe('NavigationSection', () => {
-  let rendered: ShallowWrapper;
-
-  describe('when isPrimary is not specified', () => {
-    beforeEach(() => {
-      rendered = shallow(<NavigationSection />);
-    });
-
-    it('renders correctly', () => {
-      expect(rendered).toMatchSnapshot();
-    });
+  it('should not grow to fill the space when isPrimary is not specified', () => {
+    const { container } = render(<NavigationSection />);
+    expect(container.firstChild).toHaveStyle({ 'flex-grow': 0 });
   });
 
-  describe('when isPrimary is specified false', () => {
-    beforeEach(() => {
-      rendered = shallow(<NavigationSection isPrimary={false} />);
-    });
-
-    it('renders correctly', () => {
-      expect(rendered).toMatchSnapshot();
-    });
+  it('should not grow to fill the space when isPrimary is specified false', () => {
+    const { container } = render(<NavigationSection isPrimary={false} />);
+    expect(container.firstChild).toHaveStyle({ 'flex-grow': 0 });
   });
 
-  describe('when isPrimary is specified true', () => {
-    beforeEach(() => {
-      rendered = shallow(<NavigationSection isPrimary={true} />);
-    });
-
-    it('renders correctly', () => {
-      expect(rendered).toMatchSnapshot();
-    });
+  it('should grow to fill the space when isPrimary is specified true', () => {
+    const { container } = render(<NavigationSection isPrimary={true} />);
+    expect(container.firstChild).toHaveStyle({ 'flex-grow': 1 });
   });
 });
