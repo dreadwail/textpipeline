@@ -217,6 +217,6 @@
     "pretty-quick": "1.11.1",
     "shx": "0.3.2",
     "ts-jest": "24.1.0",
-    "typescript": "3.6.3"
+    "typescript": "4.0.5"
   }
 }
