@@ -31,7 +31,7 @@ const baseRoutes: Record<BaseRouteKey, PathableRouteProps> = {
 
 const transformRoutes: Record<string, PathableRouteProps> = Object.keys(transformsBySlug).reduce(
   (transformRoutesSoFar, slug) => {
-    const { name, inputType, outputType, project, defaultOutput, execute } = transformsBySlug[slug];
+    const { name, inputTypeName, outputTypeName, project, defaultOutput, execute } = transformsBySlug[slug];
     return {
       ...transformRoutesSoFar,
       [`transform-${slug}`]: {
@@ -39,9 +39,9 @@ const transformRoutes: Record<string, PathableRouteProps> = Object.keys(transfor
         component: () => (
           <Transform
             name={name}
-            ossHref={`${ossPath}/${project.slug}`}
-            inputType={inputType}
-            outputType={outputType}
+            ossHref={project ? `${ossPath}/${project.slug}` : undefined}
+            inputTypeName={inputTypeName}
+            outputTypeName={outputTypeName}
             defaultOutput={defaultOutput}
             execute={execute}
           />

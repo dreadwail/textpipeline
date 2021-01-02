@@ -9,8 +9,8 @@ storiesOf('Transform', module).add('default', () => (
   <Transform
     name={testTransform.name}
     ossHref={`${routes.oss.path}/${testTransform.slug}`}
-    inputType={testTransform.inputType}
-    outputType={testTransform.outputType}
+    inputTypeName={testTransform.inputTypeName}
+    outputTypeName={testTransform.outputTypeName}
     defaultOutput={testTransform.defaultOutput}
     execute={testTransform.execute}
   />

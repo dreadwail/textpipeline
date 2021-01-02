@@ -4,7 +4,7 @@ import routes from 'routes';
 import { testTransform } from 'testing/fixtures';
 import { act, fireEvent, render, RenderResult } from 'testing/react';
 
-import Transform from './Transform';
+import Transform, { TransformProps } from './Transform';
 
 jest.mock('clipboard-copy');
 
@@ -30,6 +30,7 @@ const getMaterialButtonByText = (result: RenderResult, text: string): HTMLButton
   return buttonNearby;
 };
 
+const queryOSSLink = (result: RenderResult) => result.queryByRole('link', { name: /about this transform/i });
 const getInputBox = (result: RenderResult) => result.getByLabelText(/Text to transform/i);
 const getOutputBox = (result: RenderResult) => result.getByLabelText(/Transformed text/i);
 const getTransformButton = (result: RenderResult) => getMaterialButtonByText(result, 'Transform');
@@ -40,23 +41,50 @@ const queryLoadingIndicator = (result: RenderResult) => result.queryByRole('prog
 
 describe('Transform', () => {
   let execute: jest.Mock;
+  let defaultProps: TransformProps;
   let rendered: RenderResult;
 
   beforeEach(() => {
     execute = jest.fn(testTransform.execute);
-    rendered = render(
-      <Transform
-        name={testTransform.name}
-        ossHref={`${routes.oss.path}/${testTransform.slug}`}
-        inputType={testTransform.inputType}
-        outputType={testTransform.outputType}
-        defaultOutput={testTransform.defaultOutput}
-        execute={execute}
-      />
-    );
+    defaultProps = {
+      name: testTransform.name,
+      ossHref: `${routes.oss.path}/${testTransform.slug}`,
+      inputTypeName: testTransform.inputTypeName,
+      outputTypeName: testTransform.outputTypeName,
+      defaultOutput: testTransform.defaultOutput,
+      execute,
+    };
+  });
+
+  describe('when the transform is not based upon OSS', () => {
+    beforeEach(() => {
+      rendered = render(<Transform {...defaultProps} ossHref={undefined} />);
+    });
+
+    it('renders no OSS project link', () => {
+      expect(queryOSSLink(rendered)).not.toBeInTheDocument();
+    });
+  });
+
+  describe('when the transform is based upon OSS', () => {
+    let ossHref: string;
+
+    beforeEach(() => {
+      ossHref = '/oss/foo';
+      rendered = render(<Transform {...defaultProps} ossHref={ossHref} />);
+    });
+
+    it('renders an OSS project link', () => {
+      const ossLink = queryOSSLink(rendered);
+      expect(ossLink).toHaveAttribute('href', ossHref);
+    });
   });
 
   describe('before the user has entered text in the input box', () => {
+    beforeEach(() => {
+      rendered = render(<Transform {...defaultProps} />);
+    });
+
     it('renders the transform button disabled', () => {
       expect(getTransformButton(rendered)).toBeDisabled();
     });
@@ -72,6 +100,10 @@ describe('Transform', () => {
 
   describe('when text is typed into the input box', () => {
     beforeEach(() => {
+      rendered = render(<Transform {...defaultProps} />);
+    });
+
+    beforeEach(() => {
       fireEvent.change(getInputBox(rendered), { target: { value: 'stuff' } });
     });
 
@@ -81,6 +113,10 @@ describe('Transform', () => {
   });
 
   describe('when no text was input and the transform button is clicked', () => {
+    beforeEach(() => {
+      rendered = render(<Transform {...defaultProps} />);
+    });
+
     beforeEach(() => {
       fireEvent.change(getInputBox(rendered), { target: { value: ' ' } });
       fireEvent.click(getTransformButton(rendered));
@@ -97,6 +133,10 @@ describe('Transform', () => {
 
   describe('after the user has entered text in the input box', () => {
     let inputValue: string;
+
+    beforeEach(() => {
+      rendered = render(<Transform {...defaultProps} />);
+    });
 
     beforeEach(() => {
       inputValue = 'stuff';
