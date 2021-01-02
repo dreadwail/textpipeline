@@ -8,8 +8,8 @@ const containsNonBinary = (suspect: string): boolean => /[^0-1]+/.test(suspect);
 const transform: Transform = {
   name: 'Binary To Decimal',
   slug: 'binary-to-decimal',
-  inputType: 'Binary',
-  outputType: 'Decimal',
+  inputTypeName: 'Binary',
+  outputTypeName: 'Decimal',
   project: decimalJs,
   defaultOutput: '0',
   execute: async input => {

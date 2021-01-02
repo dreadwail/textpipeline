@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`toLower has the correct attributes 1`] = `
+Object {
+  "defaultOutput": "",
+  "execute": [Function],
+  "inputTypeName": "Text",
+  "name": "To Lowercase",
+  "outputTypeName": "Lowercased Text",
+  "project": undefined,
+  "slug": "to-lower",
+}
+`;

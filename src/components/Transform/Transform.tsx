@@ -15,14 +15,21 @@ const textFieldRowCount = 12;
 
 export interface TransformProps {
   readonly name: TextTransform['name'];
-  readonly inputType: TextTransform['inputType'];
-  readonly outputType: TextTransform['outputType'];
+  readonly inputTypeName: TextTransform['inputTypeName'];
+  readonly outputTypeName: TextTransform['outputTypeName'];
   readonly defaultOutput: TextTransform['defaultOutput'];
   readonly execute: TextTransform['execute'];
-  readonly ossHref: string;
+  readonly ossHref: string | undefined;
 }
 
-const Transform: React.FC<TransformProps> = ({ name, inputType, outputType, execute, defaultOutput, ossHref }) => {
+const Transform: React.FC<TransformProps> = ({
+  name,
+  inputTypeName,
+  outputTypeName,
+  execute,
+  defaultOutput,
+  ossHref,
+}) => {
   const [inputValue, setInputValue] = useState('');
   const [outputValue, setOutputValue] = useState('');
   const [error, setError] = useState<String | string | null>(null);
@@ -78,7 +85,7 @@ const Transform: React.FC<TransformProps> = ({ name, inputType, outputType, exec
     <>
       <Box display="flex" flexWrap="nowrap" justifyContent="space-between" alignItems="center">
         <Heading level={2}>{name}</Heading>
-        <InternalLink href={ossHref}>about this transform</InternalLink>
+        {ossHref && <InternalLink href={ossHref}>about this transform</InternalLink>}
       </Box>
 
       <Box my={3}>
@@ -86,7 +93,7 @@ const Transform: React.FC<TransformProps> = ({ name, inputType, outputType, exec
           <TextField
             id="text-to-transform"
             label="Text to transform"
-            placeholder={`Enter ${inputType} here`}
+            placeholder={`Enter ${inputTypeName} here`}
             helperText={inputHelperText}
             error={!isValid}
             variant="outlined"
@@ -128,7 +135,7 @@ const Transform: React.FC<TransformProps> = ({ name, inputType, outputType, exec
           <TextField
             id="transformed-text"
             label="Transformed text"
-            placeholder={`${outputType} will appear here`}
+            placeholder={`${outputTypeName} will appear here`}
             variant="outlined"
             rows={textFieldRowCount}
             value={outputValue}

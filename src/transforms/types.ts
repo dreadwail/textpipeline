@@ -3,9 +3,9 @@ import { OpenSourceProject } from 'oss';
 export interface Transform {
   readonly name: string;
   readonly slug: string;
-  readonly inputType: string;
-  readonly outputType: string;
-  readonly project: OpenSourceProject;
+  readonly inputTypeName: string;
+  readonly outputTypeName: string;
+  readonly project: OpenSourceProject | undefined;
   readonly defaultOutput: string;
   readonly execute: (input: string) => Promise<string>;
 }

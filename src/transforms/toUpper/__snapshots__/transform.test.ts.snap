@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`toUpper has the correct attributes 1`] = `
+Object {
+  "defaultOutput": "",
+  "execute": [Function],
+  "inputTypeName": "Text",
+  "name": "To Uppercase",
+  "outputTypeName": "Uppercased Text",
+  "project": undefined,
+  "slug": "to-upper",
+}
+`;

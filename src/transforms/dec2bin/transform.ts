@@ -8,8 +8,8 @@ const containsNonDecimal = (suspect: string): boolean => !/^(\d*\.)?\d+$/.test(s
 const transform: Transform = {
   name: 'Decimal to Binary',
   slug: 'decimal-to-binary',
-  inputType: 'Decimal',
-  outputType: 'Binary',
+  inputTypeName: 'Decimal',
+  outputTypeName: 'Binary',
   project: decimalJs,
   defaultOutput: '0',
   execute: async input => {

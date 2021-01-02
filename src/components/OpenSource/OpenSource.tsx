@@ -40,7 +40,10 @@ const OpenSource: React.FC<OpenSourceProps> = ({ ossPath }) => (
             const project = ossBySlug[slug];
             const transformCount = Object.keys(transformsBySlug).filter(transformSlug => {
               const transform = transformsBySlug[transformSlug];
-              return transform.project.slug === slug;
+              if (transform.project) {
+                return transform.project.slug === slug;
+              }
+              return false;
             }).length;
             return (
               <TableRow key={slug}>

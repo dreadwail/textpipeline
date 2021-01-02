@@ -4,9 +4,9 @@ exports[`dec2bin has the correct attributes 1`] = `
 Object {
   "defaultOutput": "0",
   "execute": [Function],
-  "inputType": "Decimal",
+  "inputTypeName": "Decimal",
   "name": "Decimal to Binary",
-  "outputType": "Binary",
+  "outputTypeName": "Binary",
   "project": Object {
     "description": "An arbitrary-precision Decimal type for JavaScript.",
     "license": Object {
