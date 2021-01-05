@@ -7,7 +7,7 @@ export const testTransform: Transform = {
   slug: 'foo-to-bar',
   inputTypeName: 'Foo',
   outputTypeName: 'Bar',
-  project: testOss,
+  openSourceProject: testOss,
   defaultOutput: '0',
   execute: async () => '42',
 };

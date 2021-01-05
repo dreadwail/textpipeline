@@ -37,24 +37,24 @@ const OpenSource: React.FC<OpenSourceProps> = ({ ossPath }) => (
         </TableHead>
         <TableBody>
           {Object.keys(ossBySlug).map(slug => {
-            const project = ossBySlug[slug];
+            const openSourceProject = ossBySlug[slug];
             const transformCount = Object.keys(transformsBySlug).filter(transformSlug => {
               const transform = transformsBySlug[transformSlug];
-              if (transform.project) {
-                return transform.project.slug === slug;
+              if (transform.openSourceProject) {
+                return transform.openSourceProject.slug === slug;
               }
               return false;
             }).length;
             return (
               <TableRow key={slug}>
                 <TableCell>
-                  <ExternalLink href={project.projectHref}>{project.name}</ExternalLink>
+                  <ExternalLink href={openSourceProject.href}>{openSourceProject.name}</ExternalLink>
                 </TableCell>
                 <TableCell>
                   <InternalLink href={`${ossPath}/${slug}`}>View Transforms ({transformCount})</InternalLink>
                 </TableCell>
                 <TableCell>
-                  <ExternalLink href={project.license.href}>{project.license.name}</ExternalLink>
+                  <ExternalLink href={openSourceProject.license.href}>{openSourceProject.license.name}</ExternalLink>
                 </TableCell>
               </TableRow>
             );

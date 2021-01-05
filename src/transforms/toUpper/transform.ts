@@ -5,7 +5,7 @@ const transform: Transform = {
   slug: 'to-upper',
   inputTypeName: 'Text',
   outputTypeName: 'Uppercased Text',
-  project: undefined,
+  openSourceProject: undefined,
   defaultOutput: '',
   execute: async (input: string) => input.toUpperCase(),
 };

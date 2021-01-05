@@ -7,32 +7,25 @@ import LinkIcon from '@material-ui/icons/Link';
 import Heading from 'components/Heading';
 import ListItemLink from 'components/ListItemLink';
 import TransformList from 'components/TransformList';
-import { License } from 'licenses';
 import React from 'react';
-import { byProjectSlug } from 'transforms';
+import { byOpenSourceProjectSlug } from 'transforms';
+import { OpenSourceProject as OSSProject } from 'oss';
 
-export interface OpenSourceProjectProps {
-  readonly name: string;
-  readonly description: string;
-  readonly slug: string;
-  readonly projectHref: string;
-  readonly repositoryHref: string;
-  readonly license: License;
-  readonly licenseText: string;
+export type OpenSourceProjectProps = OSSProject & {
   readonly transformsPath: string;
-}
+};
 
 const OpenSourceProject: React.FC<OpenSourceProjectProps> = ({
   name,
   slug,
   description,
-  projectHref,
+  href,
   repositoryHref,
   license,
   licenseText,
   transformsPath,
 }) => {
-  const transforms = byProjectSlug[slug] || [];
+  const transforms = byOpenSourceProjectSlug[slug] || [];
   return (
     <>
       <Box mb={2}>
@@ -44,7 +37,7 @@ const OpenSourceProject: React.FC<OpenSourceProjectProps> = ({
           <Box px={2}>
             <Box pb={3}>
               <List>
-                <ListItemLink icon={LinkIcon} text="Project" subtitle={projectHref} href={projectHref} isExternal />
+                <ListItemLink icon={LinkIcon} text="Project" subtitle={href} href={href} isExternal />
                 <Divider />
                 <ListItemLink
                   icon={LinkIcon}

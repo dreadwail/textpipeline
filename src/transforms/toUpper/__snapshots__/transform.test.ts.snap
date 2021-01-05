@@ -6,8 +6,8 @@ Object {
   "execute": [Function],
   "inputTypeName": "Text",
   "name": "To Uppercase",
+  "openSourceProject": undefined,
   "outputTypeName": "Uppercased Text",
-  "project": undefined,
   "slug": "to-upper",
 }
 `;

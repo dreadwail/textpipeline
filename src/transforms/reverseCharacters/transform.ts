@@ -5,7 +5,7 @@ const transform: Transform = {
   slug: 'reverse',
   inputTypeName: 'Text',
   outputTypeName: 'Reversed Text',
-  project: undefined,
+  openSourceProject: undefined,
   defaultOutput: '',
   execute: async input =>
     input

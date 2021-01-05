@@ -5,7 +5,7 @@ const transform: Transform = {
   slug: 'to-lower',
   inputTypeName: 'Text',
   outputTypeName: 'Lowercased Text',
-  project: undefined,
+  openSourceProject: undefined,
   defaultOutput: '',
   execute: async input => input.toLowerCase(),
 };

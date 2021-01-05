@@ -7,6 +7,6 @@ export * from './types';
 const oss: OpenSourceProject[] = [decimalJs];
 
 export const bySlug: Record<string, OpenSourceProject> = oss.reduce(
-  (by, project) => ({ ...by, [project.slug]: project }),
+  (by, openSourceProject) => ({ ...by, [openSourceProject.slug]: openSourceProject }),
   {}
 );
