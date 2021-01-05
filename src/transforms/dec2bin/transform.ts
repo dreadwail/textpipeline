@@ -10,7 +10,7 @@ const transform: Transform = {
   slug: 'decimal-to-binary',
   inputTypeName: 'Decimal',
   outputTypeName: 'Binary',
-  project: decimalJs,
+  openSourceProject: decimalJs,
   defaultOutput: '0',
   execute: async input => {
     if (!input) {

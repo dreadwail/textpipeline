@@ -15,16 +15,16 @@ export const bySlug: Record<string, Transform> = transforms.reduce(
   {}
 );
 
-export const byProjectSlug: Record<string, Transform[]> = transforms.reduce<Record<string, Transform[]>>(
+export const byOpenSourceProjectSlug: Record<string, Transform[]> = transforms.reduce<Record<string, Transform[]>>(
   (by, transform) => {
-    if (!transform.project) {
+    if (!transform.openSourceProject) {
       return by;
     }
-    const projectSlug = transform.project.slug;
-    const bucket = by[projectSlug] || [];
+    const openSourceProjectSlug = transform.openSourceProject.slug;
+    const bucket = by[openSourceProjectSlug] || [];
     return {
       ...by,
-      [projectSlug]: [...bucket, transform],
+      [openSourceProjectSlug]: [...bucket, transform],
     };
   },
   {}

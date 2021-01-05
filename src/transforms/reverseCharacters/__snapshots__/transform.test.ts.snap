@@ -6,8 +6,8 @@ Object {
   "execute": [Function],
   "inputTypeName": "Text",
   "name": "Reverse",
+  "openSourceProject": undefined,
   "outputTypeName": "Reversed Text",
-  "project": undefined,
   "slug": "reverse",
 }
 `;

@@ -6,9 +6,9 @@ Object {
   "execute": [Function],
   "inputTypeName": "Binary",
   "name": "Binary To Decimal",
-  "outputTypeName": "Decimal",
-  "project": Object {
+  "openSourceProject": Object {
     "description": "An arbitrary-precision Decimal type for JavaScript.",
+    "href": "http://mikemcl.github.io/decimal.js/",
     "license": Object {
       "href": "https://choosealicense.com/licenses/mit",
       "name": "MIT",
@@ -39,10 +39,10 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ",
     "name": "decimal.js",
-    "projectHref": "http://mikemcl.github.io/decimal.js/",
     "repositoryHref": "https://github.com/MikeMcl/decimal.js/",
     "slug": "decimal-js",
   },
+  "outputTypeName": "Decimal",
   "slug": "binary-to-decimal",
 }
 `;

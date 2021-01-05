@@ -4,7 +4,7 @@ export interface OpenSourceProject {
   readonly name: string;
   readonly description: string;
   readonly slug: string;
-  readonly projectHref: string;
+  readonly href: string;
   readonly repositoryHref: string;
   readonly license: License;
   readonly licenseText: string;

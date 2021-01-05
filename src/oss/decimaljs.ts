@@ -6,7 +6,7 @@ export const decimalJs: OpenSourceProject = {
   name: 'decimal.js',
   description: 'An arbitrary-precision Decimal type for JavaScript.',
   slug: 'decimal-js',
-  projectHref: 'http://mikemcl.github.io/decimal.js/',
+  href: 'http://mikemcl.github.io/decimal.js/',
   repositoryHref: 'https://github.com/MikeMcl/decimal.js/',
   license: mit,
   licenseText: `

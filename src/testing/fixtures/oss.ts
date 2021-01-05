@@ -5,7 +5,7 @@ export const testOss: OpenSourceProject = {
   name: 'Test Open Source Project',
   description: 'Test Open Source Project Description',
   slug: 'test-open-source-project',
-  projectHref: 'https://foobarbazbuz.github.io',
+  href: 'https://foobarbazbuz.github.io',
   repositoryHref: 'https://github.com/foobarbazbuz/foobarbazbuz/',
   license: mit,
   licenseText: `

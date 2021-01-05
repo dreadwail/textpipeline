@@ -5,7 +5,7 @@ export interface Transform {
   readonly slug: string;
   readonly inputTypeName: string;
   readonly outputTypeName: string;
-  readonly project: OpenSourceProject | undefined;
+  readonly openSourceProject: OpenSourceProject | undefined;
   readonly defaultOutput: string;
   readonly execute: (input: string) => Promise<string>;
 }
