@@ -27,6 +27,11 @@ Object {
     "exact": true,
     "path": "/transforms/decimal-to-binary",
   },
+  "transform-reverse": Object {
+    "component": [Function],
+    "exact": true,
+    "path": "/transforms/reverse",
+  },
   "transform-to-lower": Object {
     "component": [Function],
     "exact": true,

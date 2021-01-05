@@ -1,13 +1,17 @@
 import { Transform } from '../types';
 
 const transform: Transform = {
-  name: 'To Lowercase',
-  slug: 'to-lower',
+  name: 'Reverse',
+  slug: 'reverse',
   inputTypeName: 'Text',
-  outputTypeName: 'Lowercased Text',
+  outputTypeName: 'Reversed Text',
   project: undefined,
   defaultOutput: '',
-  execute: async input => input.toLowerCase(),
+  execute: async input =>
+    input
+      .split('')
+      .reverse()
+      .join(''),
 };
 
 export default transform;
