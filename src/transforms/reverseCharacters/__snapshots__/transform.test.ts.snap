@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reverseCharacters has the correct attributes 1`] = `
+Object {
+  "defaultOutput": "",
+  "execute": [Function],
+  "inputTypeName": "Text",
+  "name": "Reverse",
+  "outputTypeName": "Reversed Text",
+  "project": undefined,
+  "slug": "reverse",
+}
+`;
