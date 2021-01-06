@@ -1,14 +1,14 @@
 import bin2dec from './bin2dec';
+import camelCaseToSnakeCase from './camelCaseToSnakeCase';
 import dec2bin from './dec2bin';
-import toUpper from './toUpper';
-import toLower from './toLower';
 import reverseCharacters from './reverseCharacters';
-
+import toLower from './toLower';
+import toUpper from './toUpper';
 import { Transform } from './types';
 
 export * from './types';
 
-const transforms: Transform[] = [bin2dec, dec2bin, toUpper, toLower, reverseCharacters];
+const transforms: Transform[] = [bin2dec, camelCaseToSnakeCase, dec2bin, reverseCharacters, toUpper, toLower];
 
 export const bySlug: Record<string, Transform> = transforms.reduce(
   (by, transform) => ({ ...by, [transform.slug]: transform }),

@@ -48,11 +48,9 @@ const OpenSource: React.FC<OpenSourceProps> = ({ ossPath }) => (
             return (
               <TableRow key={slug}>
                 <TableCell>
-                  <ExternalLink href={openSourceProject.href}>{openSourceProject.name}</ExternalLink>
+                  <InternalLink href={`${ossPath}/${slug}`}>{openSourceProject.name}</InternalLink>
                 </TableCell>
-                <TableCell>
-                  <InternalLink href={`${ossPath}/${slug}`}>View Transforms ({transformCount})</InternalLink>
-                </TableCell>
+                <TableCell>{transformCount}</TableCell>
                 <TableCell>
                   <ExternalLink href={openSourceProject.license.href}>{openSourceProject.license.name}</ExternalLink>
                 </TableCell>
