@@ -11,7 +11,7 @@ export interface TransformListProps {
 
 const TransformList: React.FC<TransformListProps> = ({ transforms, transformsPath }) => (
   <List>
-    {transforms.map(({ slug, name }) => (
+    {[...transforms].sort().map(({ slug, name }) => (
       <ListItemLink key={slug} icon={EditIcon} text={name} href={`${transformsPath}/${slug}`} />
     ))}
   </List>

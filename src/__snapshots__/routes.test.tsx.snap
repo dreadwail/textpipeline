@@ -12,6 +12,11 @@ Object {
     "exact": true,
     "path": "/oss",
   },
+  "oss-decamelize": Object {
+    "component": [Function],
+    "exact": true,
+    "path": "/oss/decamelize",
+  },
   "oss-decimal-js": Object {
     "component": [Function],
     "exact": true,
@@ -21,6 +26,11 @@ Object {
     "component": [Function],
     "exact": true,
     "path": "/transforms/binary-to-decimal",
+  },
+  "transform-camel-to-snake": Object {
+    "component": [Function],
+    "exact": true,
+    "path": "/transforms/camel-to-snake",
   },
   "transform-decimal-to-binary": Object {
     "component": [Function],
