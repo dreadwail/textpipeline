@@ -1,6 +1,6 @@
 # Text Pipeline
 
-This is the source code for [textpipeline.io](https://textpipeline.io).
+This is the source code for [textpipeline](http://textpipeline.herokuapp.com/).
 
 ## Scripts
 
